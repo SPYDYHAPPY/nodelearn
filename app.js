@@ -25,19 +25,19 @@ app.get("/", (req, res) => {
 });
 
 //route for showing form
-app.get("/post", (req, res) => {
-  //render form.hbs file
-  res.render("form");
-});
+// app.get("/post", (req, res) => {
+//   //render form.hbs file
+//   res.render("form");
+// });
 
-//route for submit form by using post method
-app.post('/post',(req, res) => {
-    //render file form.hbs
-    res.render('index',{
-      //get value from textname
-      name : req.body.textname
-    });
-  });
+// //route for submit form by using post method
+// app.post('/post',(req, res) => {
+//     //render file form.hbs
+//     res.render('index',{
+//       //get value from textname
+//       name : req.body.textname
+//     });
+//   });
 
 // app.get('/:name',(req, res) =>{
 //     res.render('index',{
@@ -46,8 +46,15 @@ app.post('/post',(req, res) => {
 // });
 
 //route for about page
-app.get("/about", (req, res) => {
-  res.send("welcome to about page.");
+app.get('/us', (req, res) => {
+  //res.send("welcome to about page.");
+  res.render("about",{
+    title: "happy",
+    desc : "This is about page.",
+    Details: "Update",
+    History: "Latest updates",
+    name: "happy"
+  });
 });
 
 app.listen(8000, () => {
