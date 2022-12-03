@@ -13,50 +13,37 @@ app.set("views", path.join(__dirname, "views"));
 //set view engine
 app.set("view engine", "hbs");
 
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.urlencoded({ extended: false }));
 //set public folder as static folder static file
 app.use(express.static("public"));
 
 //route for home page
 app.get("/", (req, res) => {
-  res.render("index", {
-    name: "happy",
+  res.render('index', {
+    title: "Happy-shop",
+    desc: "Happy Shop"
   });
 });
 
-//route for showing form
-// app.get("/post", (req, res) => {
-//   //render form.hbs file
-//   res.render("form");
-// });
 
-// //route for submit form by using post method
-// app.post('/post',(req, res) => {
-//     //render file form.hbs
-//     res.render('index',{
-//       //get value from textname
-//       name : req.body.textname
-//     });
-//   });
-
-// app.get('/:name',(req, res) =>{
-//     res.render('index',{
-//         name : req.params.name
-//     });
-// });
-
-//route for about page
-app.get('/us', (req, res) => {
-  //res.send("welcome to about page.");
-  res.render("about",{
-    title: "happy",
-    desc : "This is about page.",
-    Details: "Update",
-    History: "Latest updates",
-    name: "happy"
+// Route for about Page
+app.get("/why-us", (req, res) => {
+  res.render('about', {
+    title: "Happy-shop",
+    desc: "Happy Shop"
   });
 });
 
-app.listen(8000, () => {
-  console.log("server is running at port 8000");
+// Route for products Page
+app.get("/all-products", (req, res) => {
+  res.render('products', {
+    title: "Happy-shop",
+    desc: "Happy Shop"
+  });
+});
+
+
+
+app.listen(3000, () => {
+  console.log("server is running at port 3000");
 });
