@@ -13,6 +13,14 @@ app.set("views", path.join(__dirname, "views"));
 //set view engine
 app.set("view engine", "hbs");
 
+//partials for webpage
+//hbs.registerPartials(__dirname + '/views/partials', function (err) {});
+hbs.registerPartials(path.join(__dirname, '/views/partials'), {
+  rename: function (name) {
+    // all non-word characters replaced with underscores
+    return name.replace(/\W/g, '_')
+  }
+})
 //app.use(bodyParser.urlencoded({ extended: false }));
 //set public folder as static folder static file
 app.use(express.static("public"));
