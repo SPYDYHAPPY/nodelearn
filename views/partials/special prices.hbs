@@ -10,10 +10,10 @@
         /></div>
       <div class="col-md-7">
         <sub class="small mb-1 text-muted">SKU: BST-498</sub>
-        <h1 class="display-5 fw-bolder">Shop item template</h1>
+        <h1 class="display-5 fw-bolder">HTML5</h1>
         <div class="fs-5 mb-5">
           <span class="text-decoration-line-through">₹45.00</span>
-          <span id="pprice">$</span>
+          <span id="pprice"></span>
         </div>
         <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati
@@ -49,6 +49,7 @@ function increment() {
   document.getElementById("inputQuantity").innerText = data;
   document.getElementById("cartquantity").innerText = data;
   document.getElementById("pprice").innerText = '₹' + (data * offer_price);
+  
 }
 
 function decrement() {

@@ -50,6 +50,14 @@ app.get("/all-products", (req, res) => {
   });
 });
 
+//local-store route
+app.get("/cart", (req, res) => {
+  res.render('cart_load',{
+    title: "purchase",
+    desc: "Cart Section"
+  });
+});
+
 
 
 app.listen(3000, () => {
