@@ -1,19 +1,24 @@
 <div class="col-md-10 order-md-2 mb-4">
     <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Your cart</span>
-        <span class="badge bg-secondary rounded-pill">3</span>
+        <span class="badge bg-secondary rounded-pill" id="cartitem">0</span>
     </h4>
     <ul class="list-group mb-3">
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <div>
-                <h6 class="my-0">Product name</h6>
+        <li class="list-group-item d-flex justify-content-between lh-condensed alert alert-warning alert-dismissible fade show" role="alert">
+            <h6 class="my-0 py-2" id="product_n"></h6>
+            <span id="no_item"></span>
+            <span class="text-muted mx-5 py-2" id="p_price"></span>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" id="remove_cart"></button>
+            {{!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+</div> --}}
+            {{!-- <div>
+                <h6 class="my-0" id="product_n"></h6>
                 <small class="text-muted">product description</small>
-            </div>
-            <span class="text-muted">$12</span>
+            </div> --}}
         </li>       
         <li class="list-group-item d-flex justify-content-between">
             <span>Total (INR)</span>
-            <span><b></b></span>
+            <span><b id="total"></b></span>
         </li>
     </ul>
 </div>

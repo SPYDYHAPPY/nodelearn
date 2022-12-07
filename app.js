@@ -55,7 +55,7 @@ app.get("/cart", (req, res) => {
   res.render('cart_load',{
     title: "purchase",
     desc: "Cart Section"
-  });
+  }); 
 });
 
 
