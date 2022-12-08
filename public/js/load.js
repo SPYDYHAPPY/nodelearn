@@ -40,7 +40,9 @@ if (localStorage.getItem("cart_price") != null) {
     "₹" + localStorage.getItem("cart_price");
 } else {
   document.getElementById("no_item").innerHTML = `<div class="text-secondary">
-  No items are added.<a href="/all-products" class="btn btn-outline-dark btn-sm">Add now</a></div>`;
+  No items are added.
+  <a href="/all-products" class="alert-link"><i class="bi bi-cart-x"></i></a>
+  </div>`;
   //0;
   document.getElementById("addedpr").style.display = "none";
 }
