@@ -39,8 +39,8 @@ if (localStorage.getItem("cart_price") != null) {
   document.getElementById("total").innerHTML =
     "₹" + localStorage.getItem("cart_price");
 } else {
-  document.getElementById("no_item").innerHTML = `<div class="alert alert-warning" role="alert">
-  No items added.<a href="/all-products" class="alert-link">add now</a>.</div>`;
+  document.getElementById("no_item").innerHTML = `<div class="text-secondary">
+  No items are added.<a href="/all-products" class="btn btn-outline-dark btn-sm">Add now</a></div>`;
   //0;
-  document.getElementById("total").innerHTML = 0;
+  document.getElementById("addedpr").style.display = "none";
 }
