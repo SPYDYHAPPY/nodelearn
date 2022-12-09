@@ -18,6 +18,14 @@
 
 //click function call
 document.getElementById("remove_cart").addEventListener("click", itemDrop);
+document.getElementById("remove_all").addEventListener("click", removeItem);
+
+function removeItem() {
+  localStorage.clear("sku_name");
+  localStorage.clear("cartquantity");
+  localStorage.clear("cart_price");
+  window.location.reload();
+}
 
 function itemDrop() {
   localStorage.removeItem("sku_name");
