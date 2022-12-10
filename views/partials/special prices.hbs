@@ -42,10 +42,11 @@
   document.getElementById("quantity").addEventListener("click", increment);
 
   //fetch local storage value
-  var pr_list = localStorage.getItem("p_id");
+  var pr_list = localStorage.getItem("purchase");
   var p_date = JSON.parse(pr_list);
 
-  document.getElementById("cartquantity").innerHTML = p_date;
+  
+  document.getElementById("cartquantity").innerHTML = p_date.c_qn;
 
   function increment() {
     //show quantity, cart quantity
@@ -57,16 +58,17 @@
     var p_pr = document.getElementById("pprice").innerText = '₹' + cart_price;
 
 
-    var p_id = 'purchase' + Date.now();
+    var p_id = 'purchase' + Date.now('dmy');
 
     const p_list = {
+      p_id: p_id,
       i_qn: i_qn,
       c_qn: c_qn,
       p_pr: p_pr,
       sku: sku,
     }
     //console.log(JSON.stringify(p_list));
-    window.localStorage.setItem(p_id, JSON.stringify(p_list));
+    window.localStorage.setItem("purchase", JSON.stringify(p_list));
     //set local storage value for cart process
     //localStorage.setItem("sku_name", sku);
     //localStorage.setItem("cartquantity", data);
