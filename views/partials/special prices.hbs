@@ -19,7 +19,7 @@
         <div class="d-flex">
           {{!-- <button class="me-3" onclick="increment()">+</button>
           <button class="me-3" onclick="decrement()">-</button> --}}
-          <span class="form-control text-center me-3" id="inputQuantity" type="num" style="max-width: 5rem;"></span>
+          <input class="form-control text-center me-3" id="inputQuantity" type="num" style="max-width: 5rem;"></input>
           <button id="quantity" class="btn btn-outline-dark flex-shrink-0" type="button">
             <i class="bi-cart-fill me-1"></i>
             Add to cart
@@ -42,21 +42,35 @@
   document.getElementById("quantity").addEventListener("click", increment);
 
   //fetch local storage value
-  document.getElementById("cartquantity").innerHTML = localStorage.getItem("cartquantity");
+  var pr_list = localStorage.getItem("p_id");
+  var p_date = JSON.parse(pr_list);
+
+  document.getElementById("cartquantity").innerHTML = p_date;
 
   function increment() {
     //show quantity, cart quantity
     data = data + 1;
-    document.getElementById("inputQuantity").innerText = data;
-    document.getElementById("cartquantity").innerText = data;
+    var c_qn = document.getElementById("cartquantity").innerText = data;
+    var i_qn = document.getElementById("inputQuantity").value;
     //cart price calc
-    var cart_price = data * offer_price;
-    document.getElementById("pprice").innerText = '₹' + cart_price;
+    var cart_price = i_qn * offer_price;
+    var p_pr = document.getElementById("pprice").innerText = '₹' + cart_price;
 
+
+    var p_id = 'purchase' + Date.now();
+
+    const p_list = {
+      i_qn: i_qn,
+      c_qn: c_qn,
+      p_pr: p_pr,
+      sku: sku,
+    }
+    //console.log(JSON.stringify(p_list));
+    window.localStorage.setItem(p_id, JSON.stringify(p_list));
     //set local storage value for cart process
-    localStorage.setItem("sku_name", sku);
-    localStorage.setItem("cartquantity", data);
-    localStorage.setItem("cart_price", cart_price); 
+    //localStorage.setItem("sku_name", sku);
+    //localStorage.setItem("cartquantity", data);
+    //localStorage.setItem("cart_price", cart_price); 
   }
 
   function decrement() {
