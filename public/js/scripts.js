@@ -78,3 +78,5 @@ function increment() {
 //   localStorage.removeItem("inputQuantity", inputQuantity);
 //   localStorage.removeItem("pprice", pprice);
 // }
+
+

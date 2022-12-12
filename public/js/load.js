@@ -53,7 +53,7 @@ if (localStorage.getItem("purchase") != null) {
   document.getElementById("no_item").innerHTML = ` `;
 } else {
   document.getElementById("no_item").innerHTML = `<div class="text-secondary">
-    No items are added.
+    No items added.
     <a href="/all-products" class="alert-link"><i class="bi bi-cart-x"></i></a>
     </div>`;
   document.getElementById("addedpr").style.display = "none";
