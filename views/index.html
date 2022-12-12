@@ -2,56 +2,27 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>{{title}}</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-    {{!-- <style>
-        .form-signin {
-            width: 100%;
-            max-width: 330px;
-            padding: 15px;
-            margin: auto;
-        }
-
-        .form-signin .checkbox {
-            font-weight: 400;
-        }
-
-        .form-signin .form-floating:focus-within {
-            z-index: 2;
-        }
-
-        .form-signin input[type="email"] {
-            margin-bottom: -1px;
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-
-        .form-signin input[type="password"] {
-            margin-bottom: 10px;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-    </style> --}}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         .form-box {
             width: 350px;
             height: 420px;
             position: relative;
             margin: 2% auto;
-            background: #f1f0f0;
+            background: #fff;
             padding: 10px;
             overflow: hidden;
             border-radius: 50px;
+            border: 1px solid #111;
         }
 
         .button-box {
@@ -120,7 +91,7 @@
 
         span {
             color: #777;
-            font-size: 10px;
+            font-size: 12px;
             bottom: 68px;
             position: absolute;
         }
@@ -146,8 +117,8 @@
 
 </head>
 
-<body class="text-center">
-    {{> navbar}}
+<body>
+
     <div class="form-box" id="login-form">
         <div class="button-box">
             <div id="btn"></div>
@@ -174,30 +145,7 @@
         </form>
     </div>
 
-    {{!-- <main class="form-signin py-5">
-        <form action="/user-dashboard">
-            <img class="mb-4" src="assets/user.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required="required">
-                <label for="floatingInput"></label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required="required">
-                <label for="floatingPassword"></label>
-            </div>
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2022-2023</p>
-        </form>
-    </main> --}}
-<script>
+    <script>
         var x = document.getElementById("login");
         var y = document.getElementById("register");
         var z = document.getElementById("btn");
@@ -222,4 +170,6 @@
         };
     </script>
 
-    {{>footer}}
+</body>
+
+</html>
