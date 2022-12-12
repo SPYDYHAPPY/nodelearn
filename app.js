@@ -37,27 +37,42 @@ app.get("/", (req, res) => {
 // Route for about Page
 app.get("/why-us", (req, res) => {
   res.render('about', {
-    title: "Happy-shop",
-    desc: "Happy Shop"
+    title: "Why Us?",
+    desc: "About Section"
   });
 });
 
 // Route for products Page
 app.get("/all-products", (req, res) => {
   res.render('products', {
-    title: "Happy-shop",
-    desc: "Happy Shop"
+    title: "Product List",
+    desc: "Products Section"
   });
 });
 
 //local-store route
 app.get("/cart", (req, res) => {
   res.render('cart_load',{
-    title: "purchase",
-    desc: "Cart Section"
+    title: "Purchase",
+    desc: "Cart Section"           
   }); 
 });
 
+//login route
+app.get("/user-login", (req, res) => {
+   res.render('login',{
+     title: "User Login",
+     desc: "Login Section"           
+   }); 
+});
+
+//dashboard route
+app.get("/user-dashboard", (req, res) => {
+  res.render('dashboard',{
+    title: "User Dashboard",
+    desc: "Dashboard"           
+  }); 
+});
 
 
 app.listen(3000, () => {

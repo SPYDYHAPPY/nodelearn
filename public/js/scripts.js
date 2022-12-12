@@ -53,7 +53,7 @@ function increment() {
             "notification"
         ).innerHTML = `<div class="alert alert-danger" role="alert">Blank input not allowed</div>`;
         window.location.reload();
-    }
+    }             
 }
 
 // function decrement() {
