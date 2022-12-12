@@ -65,7 +65,7 @@ function increment() {
         ).innerHTML = `<div class="alert alert-danger" role="alert">Blank input not allowed</div>`;
         setTimeout(() => {
             window.location.reload();
-        }, 3000);
+        }, 2000);
     }             
 }
 

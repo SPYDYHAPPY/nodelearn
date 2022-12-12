@@ -1,10 +1,25 @@
-     <!-- Footer-->
-        <footer class="py-1 bg-light">
-            <div class="container"><p class="m-0 text-center text-dark">Copyright &copy; Your Website 2022</p></div>
-        </footer>
-        <!-- external JS-->        
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-    </body>
+<!-- Footer-->
+<footer class="py-1 bg-light">
+    <div class="container">
+        <p class="m-0 text-center text-dark">Copyright &copy; Your Website 2022</p>
+    </div>
+</footer>
+<!-- external JS-->
+<script>
+    //fetch local storage value
+    var data = 0;
+    var pr_list = JSON.parse(localStorage.getItem("purchase"));
+
+    if (localStorage.getItem("purchase") != null) {
+        document.getElementById("cartquantity").innerHTML = pr_list.c_qn;
+    }
+    else {
+        document.getElementById("cartquantity").innerHTML = data;
+    }
+</script>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
 </html>
