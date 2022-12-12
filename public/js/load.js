@@ -17,40 +17,44 @@
 // }
 
 //click function call
-document.getElementById("remove_cart").addEventListener("click", itemDrop);
-document.getElementById("remove_all").addEventListener("click", removeItem);
-
-function removeItem() {
-  localStorage.clear("sku_name");
-  localStorage.clear("cartquantity");
-  localStorage.clear("cart_price");
+document.getElementById("remove_all").addEventListener("click", 
+function clearItems() {
+  localStorage.clear("purchase");
+  // localStorage.clear("sku");
+  // localStorage.clear("c_qn");
+  // localStorage.clear("p_pr");
   window.location.reload();
-}
+});
 
+document.getElementById("remove_cart").addEventListener("click", 
 function itemDrop() {
-  localStorage.removeItem("sku_name");
-  localStorage.removeItem("cartquantity");
-  localStorage.removeItem("cart_price");
+  localStorage.removeItem("purchase");
+  // localStorage.removeItem("cartquantity");
+  // localStorage.removeItem("cart_price");
   window.location.reload();
-}
+});
 
-document.getElementById("cartitem").innerHTML =
-  localStorage.getItem("cartquantity");
-document.getElementById("product_n").innerHTML =
-  localStorage.getItem("sku_name");
-document.getElementById("cartquantity").innerHTML =
-  localStorage.getItem("cartquantity");
+//document.getElementById("cartquantity").innerHTML = p_date.c_qn;
+//document.getElementById("remove_all").innerText = "p_date";
+//document.getElementById("remove_cart").innerHTML = "p_date";
 
-if (localStorage.getItem("cart_price") != null) {
-  document.getElementById("p_price").innerHTML =
-    "₹" + localStorage.getItem("cart_price");
-  document.getElementById("total").innerHTML =
-    "₹" + localStorage.getItem("cart_price");
+//fetch local storage value
+var pr_list = JSON.parse(localStorage.getItem("purchase"));
+
+if (pr_list != "") {
+
+  document.getElementById("cartquantity").innerHTML = pr_list.c_qn;
+  document.getElementById("cartitem").innerHTML = pr_list.i_qn;
+  document.getElementById("product_n").innerHTML = pr_list.sku;
+  document.getElementById("p_price").innerHTML = pr_list.p_pr;
+  document.getElementById("total").innerHTML = pr_list.p_pr;
+ 
 } else {
+
+  document.getElementById("addedpr").style.display = "none";
   document.getElementById("no_item").innerHTML = `<div class="text-secondary">
   No items are added.
   <a href="/all-products" class="alert-link"><i class="bi bi-cart-x"></i></a>
   </div>`;
   //0;
-  document.getElementById("addedpr").style.display = "none";
 }

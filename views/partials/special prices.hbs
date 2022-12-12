@@ -1,6 +1,7 @@
 <!-- Product section-->
 <section class="py-2">
   <div class="container px-4 px-lg-5 my-5">
+    <div id="notification"></div>
     <div class="row gx-4 gx-lg-5 align-items-center">
       <div class="col-md-5">
         <img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." />
@@ -29,60 +30,3 @@
     </div>
   </div>
 </section>
-<script>
-  var data = 0;
-  var offer_price = 40.00;
-  var sku = "HTML5";
-
-  document.getElementById("inputQuantity").innerText = data;
-  document.getElementById("pprice").innerText = '₹' + offer_price;
-  document.getElementById("sku_name").innerHTML = sku;
-
-  //click function call
-  document.getElementById("quantity").addEventListener("click", increment);
-
-  //fetch local storage value
-  var pr_list = localStorage.getItem("purchase");
-  var p_date = JSON.parse(pr_list);
-
-  
-  document.getElementById("cartquantity").innerHTML = p_date.c_qn;
-
-  function increment() {
-    //show quantity, cart quantity
-    data = data + 1;
-    var c_qn = document.getElementById("cartquantity").innerText = data;
-    var i_qn = document.getElementById("inputQuantity").value;
-    //cart price calc
-    var cart_price = i_qn * offer_price;
-    var p_pr = document.getElementById("pprice").innerText = '₹' + cart_price;
-
-
-    var p_id = 'purchase' + Date.now('dmy');
-
-    const p_list = {
-      p_id: p_id,
-      i_qn: i_qn,
-      c_qn: c_qn,
-      p_pr: p_pr,
-      sku: sku,
-    }
-    //console.log(JSON.stringify(p_list));
-    window.localStorage.setItem("purchase", JSON.stringify(p_list));
-    //set local storage value for cart process
-    //localStorage.setItem("sku_name", sku);
-    //localStorage.setItem("cartquantity", data);
-    //localStorage.setItem("cart_price", cart_price); 
-  }
-
-  function decrement() {
-    data = 0;
-    offer_price = 0;
-    document.getElementById("cartquantity").innerText = data;
-    document.getElementById("inputQuantity").innerText = data;
-    document.getElementById("pprice").innerText = '₹' + offer_price;
-    localStorage.removeItem("inputQuantity", inputQuantity);
-    localStorage.removeItem("pprice", pprice);
-  }
-
-</script>
