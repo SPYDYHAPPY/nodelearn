@@ -17,6 +17,15 @@ document.getElementById("sku_name").innerHTML = sku;
 //click function call
 document.getElementById("quantity").addEventListener("click", increment);
 
+//fetch local storage value
+var pr_list = JSON.parse(localStorage.getItem("purchase"));
+
+if (localStorage.getItem("purchase") != null) {
+    document.getElementById("cartquantity").innerHTML = pr_list.c_qn;
+}
+else {
+    document.getElementById("cartquantity").innerHTML = data;
+}
 
 function increment() {
     //show quantity, cart quantity
@@ -45,14 +54,18 @@ function increment() {
         //localStorage.setItem("cart_price", cart_price);
         document.getElementById(
             "notification"
-        ).innerHTML = `<div class="alert alert-success" role="alert">Successfully added to cart.</div>`;
-        window.location.reload();
+        ).innerHTML = `<div class="alert alert-success" role="alert">Successfully added & <a class="alert-link" href="/cart"><i class="bi-cart-fill me-1">go to cart</i></a>to checkout your order.</div>`;
+        setTimeout(() => {
+            window.location.reload();
+        }, 5000);
     } else {
         document.getElementById("inputQuantity").style.border = "1px solid red";
         document.getElementById(
             "notification"
         ).innerHTML = `<div class="alert alert-danger" role="alert">Blank input not allowed</div>`;
-        window.location.reload();
+        setTimeout(() => {
+            window.location.reload();
+        }, 3000);
     }             
 }
 
