@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <style>
+    {{!-- <style>
         .form-signin {
             width: 100%;
             max-width: 350px;
@@ -40,24 +40,125 @@
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
+    </style> --}}
+
+    <style>
+        .form-box {
+            width: 350px;
+            height: 420px;
+            position: relative;
+            margin: 2% auto;
+            background: #f1f0f0;
+            padding: 10px;
+            overflow: hidden;
+            border-radius: 50px;
+        }
+
+        .button-box {
+            display: flex;
+            width: 220px;
+            margin: 35px auto;
+            position: relative;
+            box-shadow: 0 0 20px 9px #ff61241f;
+            border-radius: 30px;
+        }
+
+        .toggle-btn {
+            padding: 10px 30px;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            outline: none;
+            position: relative;
+        }
+
+        #btn {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: #f3c693;
+            border-radius: 30px;
+            transition: .5s;
+        }
+
+        .input-group {
+            top: 120px;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid #999;
+            outline: none;
+            background: transparent;
+        }
+
+        .submit-btn {
+            width: 85%;
+            padding: 10px 30px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            background: #f3c693;
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+        }
+
+        .check-box {
+            margin: 30px 10px 30px 0;
+        }
+
+        span {
+            color: #777;
+            font-size: 10px;
+            bottom: 68px;
+            position: absolute;
+        }
+
+        #login {
+            left: 50px;
+        }
+
+        #register {
+            left: 450px;
+        }
+
+        #login input {
+            color: white;
+            font-size: 15;
+        }
+
+        #register input {
+            color: white;
+            font-size: 15;
+        }
     </style>
+
 </head>
 
 <body class="text-center">
     {{> navbar}}
-    <main class="form-signin py-5 mt-5">
+    <main class="form-signin py-5">
         <form action="/user-dashboard">
             <img class="mb-4" src="assets/user.svg" alt="" width="82" height="67">
             <h1 class="h3 mb-3 fw-normal text-uppercase">Profile Signin</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-                    required="required">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required="required">
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-                    required="required">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required="required">
                 <label for="floatingPassword">Password</label>
             </div>
 
@@ -67,11 +168,8 @@
                 </label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
         </form>
     </main>
-    <div class="d-flex justify-content-center mt-2 mb-5">
-        <a href="#" class="btn">forgot your password ?</a>
-        <a href="#" class="btn mx-4"><i class="bi-person"></i> New User</a>
-    </div>
 
     {{>footer}}
