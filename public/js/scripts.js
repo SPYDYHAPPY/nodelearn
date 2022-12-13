@@ -22,8 +22,7 @@ var pr_list = JSON.parse(localStorage.getItem("purchase"));
 
 if (localStorage.getItem("purchase") != null) {
     document.getElementById("cartquantity").innerHTML = pr_list.c_qn;
-}
-else {
+} else {
     document.getElementById("cartquantity").innerHTML = data;
 }
 
@@ -54,19 +53,21 @@ function increment() {
         //localStorage.setItem("cart_price", cart_price);
         document.getElementById(
             "notification"
-        ).innerHTML = `<div class="alert alert-success" role="alert">Successfully added & <a class="alert-link" href="/cart"><i class="bi-cart-fill me-1">go to cart</i></a>to checkout your order.</div>`;
+        ).innerHTML = `<div class="alert alert-success" role="alert">Successfully added &
+         <a class="alert-link" href="/cart"><i class="bi-cart-fill me-1">go to cart</i></a>to checkout your order.</div>`;
+       
         setTimeout(() => {
             window.location.reload();
         }, 5000);
     } else {
         document.getElementById("inputQuantity").style.border = "1px solid red";
-        document.getElementById(
-            "notification"
-        ).innerHTML = `<div class="alert alert-danger" role="alert">Blank input not allowed</div>`;
+        document.getElementById("notification").innerHTML = `<div class="alert alert-danger"
+         role="alert">Blank input not allowed</div>`;
+
         setTimeout(() => {
             window.location.reload();
-        }, 2000);
-    }             
+        }, 3000);
+    }
 }
 
 // function decrement() {
@@ -78,5 +79,3 @@ function increment() {
 //   localStorage.removeItem("inputQuantity", inputQuantity);
 //   localStorage.removeItem("pprice", pprice);
 // }
-
-
