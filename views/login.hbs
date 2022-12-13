@@ -16,7 +16,7 @@
     <style>
         .form-signin {
             width: 100%;
-            max-width: 330px;
+            max-width: 350px;
             padding: 15px;
             margin: auto;
         }
@@ -45,17 +45,19 @@
 
 <body class="text-center">
     {{> navbar}}
-    <main class="form-signin py-5">
+    <main class="form-signin py-5 mt-5">
         <form action="/user-dashboard">
-            <img class="mb-4" src="assets/user.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            <img class="mb-4" src="assets/user.svg" alt="" width="82" height="67">
+            <h1 class="h3 mb-3 fw-normal text-uppercase">Profile Signin</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required="required">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                    required="required">
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required="required">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                    required="required">
                 <label for="floatingPassword">Password</label>
             </div>
 
@@ -65,8 +67,11 @@
                 </label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
         </form>
     </main>
+    <div class="d-flex justify-content-center mt-2 mb-5">
+        <a href="#" class="btn">forgot your password ?</a>
+        <a href="#" class="btn mx-4"><i class="bi-person"></i> New User</a>
+    </div>
 
     {{>footer}}
