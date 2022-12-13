@@ -34,7 +34,7 @@ function () {
     if (p_pass != p_con) {
         //console.log('password does not match.')
         document.getElementById("notification").innerHTML = `<div class="alert alert-danger"
-        role="alert">password does not match.</div>`;
+        role="alert">Password does not match.</div>`;
 
        setTimeout(() => {
            window.location.reload();
@@ -51,8 +51,7 @@ function () {
         localStorage.setItem("person", JSON.stringify(m_list));
          document.getElementById(
             "notification"
-        ).innerHTML = `<div class="alert alert-success" role="alert">Successfully added &
-         <a class="alert-link" href="/cart"><i class="bi-cart-fill me-1">go to cart</i></a>to checkout your order.</div>`;
+        ).innerHTML = `<div class="alert alert-success" role="alert">Registration Successful</div>`;
 
         setTimeout(() => {
             window.location.reload();
