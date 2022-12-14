@@ -34,30 +34,35 @@ document.getElementById('login_btn').addEventListener('click',
 
 
         if (p_mail == "" || p_pass == "") {
-            document.getElementById("login_notification").innerHTML = `Invalid email id`;
-
+            document.getElementById("login_notification").innerHTML = "Invalid email id";
+            document.getElementById("login_notification").style.color = "#F95559";
+           
             setTimeout(() => {
                 window.location.reload();
             }, 1000);
+
         } else if (db_list.p_email != p_mail) {
             //console.log('password does not match.')
-            document.getElementById("login_notification").innerHTML = "Invalid password";
+            document.getElementById("login_notification").innerHTML = "email does not match";
+            document.getElementById("login_notification").style.color = "#F95559";
 
 
             setTimeout(() => {
                 window.location.reload();
             }, 1000);
+
         } else if (db_list.p_pass != p_pass) {
-            document.getElementById("login_notification").innerHTML = `<div class="alert alert-danger"
-        role="alert">Invalid password.</div>`;
+            document.getElementById("login_notification").innerHTML = "Invalid password";
+            document.getElementById("login_notification").style.color = "#F95559";
 
 
             setTimeout(() => {
                 window.location.reload();
             }, 5000);
+
         } else {
-            document.getElementById("login_notification").innerHTML = `<div class="alert alert-success"
-        role="alert">login success.</div>`;
+            document.getElementById("login_notification").innerHTML = "login success";
+            document.getElementById("login_notification").style.color = "#37733E";
 
 
             setTimeout(() => {

@@ -6,27 +6,27 @@ document.getElementById('reg_btn').addEventListener('click',
         var p_con = document.getElementById("con_pass").value;
 
        if (p_name == "") {
-        document.getElementById("register_notification").innerHTML = `<div class="alert alert-danger"
-        role="alert">Name required.</div>`;
+        document.getElementById("register_notification").innerHTML = "please enter your name";
+        document.getElementById("register_notification").style.color = "#F95559";
 
             setTimeout(() => {
                 window.location.reload();
-            }, 5000);
+            }, 1000);
        } else if (p_email == "") {
-        document.getElementById("register_notification").innerHTML = `<div class="alert alert-danger"
-        role="alert">email required.</div>`;
+        document.getElementById("register_notification").innerHTML = "please enter your email address";
+        document.getElementById("register_notification").style.color = "#F95559";
 
             setTimeout(() => {
                 window.location.reload();
-            }, 5000);
+            }, 1000);
        } else if (p_pass != p_con) {
             //console.log('password does not match.')
-            document.getElementById("register_notification").innerHTML = `<div class="alert alert-danger"
-        role="alert">Password does not match.</div>`;
+            document.getElementById("register_notification").innerHTML = "Password does not match";
+            document.getElementById("register_notification").style.color = "#F95559";
 
             setTimeout(() => {
                 window.location.reload();
-            }, 5000);
+            }, 1000);
         } else {
             var p_id = "hsp" + Date.now('dmy');
 
@@ -37,12 +37,11 @@ document.getElementById('reg_btn').addEventListener('click',
 
             };
             localStorage.setItem("person", JSON.stringify(m_list));
-            document.getElementById(
-                "register_notification"
-            ).innerHTML = `<div class="alert alert-success" role="alert">Registration Successful</div>`;
-
+            document.getElementById("register_notification").innerHTML = "Registration Successful";
+            document.getElementById("register_notification").style.color = "#37733E";
+           
             setTimeout(() => {
                 window.location.reload();
-            }, 10000);
+            }, 5000);
         }
     });
