@@ -24,37 +24,44 @@ window.onclick = function (event) {
 };
 
 
-document.getElementById('reg_btn').addEventListener('click', 
-function () {
-    var p_name = document.getElementById("name").value;
-    var p_email = document.getElementById("email").value;
-    var p_pass = document.getElementById("pass").value;
-    var p_con = document.getElementById("con_pass").value;
+document.getElementById('login_btn').addEventListener('click',
+    function () {
 
-    if (p_pass != p_con) {
-        //console.log('password does not match.')
-        document.getElementById("notification").innerHTML = `<div class="alert alert-danger"
-        role="alert">Password does not match.</div>`;
+        var p_mail = document.getElementById("u_email").value;
+        var p_pass = document.getElementById("u_pass").value;
 
-       setTimeout(() => {
-           window.location.reload();
-       }, 5000);
-    } else {
-        var p_id = "hsp" + Date.now('dmy');
-        
-        const m_list = {
-            p_name: p_name,
-            p_email: p_email,
-            p_pass: p_pass,
-            
-        };
-        localStorage.setItem("person", JSON.stringify(m_list));
-         document.getElementById(
-            "notification"
-        ).innerHTML = `<div class="alert alert-success" role="alert">Registration Successful</div>`;
+        var db_list = JSON.parse(localStorage.getItem("person"));
 
-        setTimeout(() => {
-            window.location.reload();
-        }, 10000);
-    }
-});
+
+        if (p_mail == "" || p_pass == "") {
+            document.getElementById("login_notification").innerHTML = `Invalid email id`;
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        } else if (db_list.p_email != p_mail) {
+            //console.log('password does not match.')
+            document.getElementById("login_notification").innerHTML = "Invalid password";
+
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        } else if (db_list.p_pass != p_pass) {
+            document.getElementById("login_notification").innerHTML = `<div class="alert alert-danger"
+        role="alert">Invalid password.</div>`;
+
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        } else {
+            document.getElementById("login_notification").innerHTML = `<div class="alert alert-success"
+        role="alert">login success.</div>`;
+
+
+            setTimeout(() => {
+                window.location.replace("http://localhost:3000/user-dashboard");
+            }, 3000);
+        }
+    });

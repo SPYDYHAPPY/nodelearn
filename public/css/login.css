@@ -64,12 +64,12 @@
     width: 100%;
     padding: 10px 25px;
     border: 0;
-    display: block;
+    /* display: block; */
     cursor: pointer;
     margin: auto;
     background: #f3c693;
     outline: none;
-    border-radius: 30px ;
+    /* border-radius: 30px ; */
 }
 
 .check-box {
