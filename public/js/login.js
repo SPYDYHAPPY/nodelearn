@@ -61,7 +61,7 @@ document.getElementById('login_btn').addEventListener('click',
             }, 5000);
 
         } else {
-            document.getElementById("login_notification").innerHTML = "login success";
+            document.getElementById("login_notification").innerHTML = "login success. you will be redirect to dashboard soon";
             document.getElementById("login_notification").style.color = "#37733E";
 
 
