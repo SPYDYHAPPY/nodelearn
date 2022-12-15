@@ -4,7 +4,7 @@
     position: relative;
     margin: 2% auto;
     background: #f1f0f0;
-    padding: 8px;
+    padding: 10px;
     overflow: hidden;
     border-radius: 50px;
 }
@@ -39,9 +39,10 @@
 }
 
 .input-group {
-    top: 120px;
+    top: 8rem;
+    left: 1rem;
     position: absolute;
-    width: 280px;
+    width: 300px;
     transition: .5s;
 }
 
@@ -57,9 +58,7 @@
     background: transparent;
 }
 
-/**
-
-    **/
+/****/
 .submit-btn {
     width: 100%;
     padding: 10px 25px;
