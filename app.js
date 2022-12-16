@@ -14,13 +14,13 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
 //partials for webpage
-//hbs.registerPartials(__dirname + '/views/partials', function (err) {});
+hbs.registerPartials(__dirname + '/views/admin_partials', function (err) {});
 hbs.registerPartials(path.join(__dirname, '/views/partials'), {
   rename: function (name) {
     // all non-word characters replaced with underscores
     return name.replace(/\W/g, '_')
   }
-})
+});
 //app.use(bodyParser.urlencoded({ extended: false }));
 //set public folder as static folder static file
 app.use(express.static("public"));
@@ -44,7 +44,7 @@ app.get("/why-us", (req, res) => {
 
 // Route for products Page
 app.get("/all-products", (req, res) => {
-  res.render('products', {
+  res.render('all_products', {
     title: "Product List",
     desc: "Products Section"
   });
@@ -71,6 +71,49 @@ app.get("/user-dashboard", (req, res) => {
   res.render('dashboard',{
     title: "User Dashboard",
     desc: "Dashboard"           
+  }); 
+});
+
+//Orders route
+app.get("/orders", (req, res) => {
+  res.render('orders',{
+    title: "Orders",
+    desc: "Orders"           
+  }); 
+});
+//Products route
+app.get("/products", (req, res) => {
+  res.render('products',{
+    title: "Products",
+    desc: "Products"           
+  }); 
+});
+//Customers route
+app.get("/customers", (req, res) => {
+  res.render('customers',{
+    title: "Customers",
+    desc: "Customers"           
+  }); 
+});
+//Reports route
+app.get("/reports", (req, res) => {
+  res.render('reports',{
+    title: "Reports",
+    desc: "Reports"           
+  }); 
+});
+//Track Orders route
+app.get("/track", (req, res) => {
+  res.render('track',{
+    title: "Track Orders",
+    desc: "Track Orders"           
+  }); 
+});
+//Sellers route
+app.get("/sellers", (req, res) => {
+  res.render('sellers',{
+    title: "Sellers",
+    desc: "Sellers"           
   }); 
 });
 
