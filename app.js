@@ -68,7 +68,7 @@ app.get("/user-login", (req, res) => {
 
 //dashboard route
 app.get("/user-dashboard", (req, res) => {
-  res.render('dashboard',{
+  res.render('admin/dashboard',{
     title: "User Dashboard",
     desc: "Dashboard"           
   }); 
@@ -76,42 +76,42 @@ app.get("/user-dashboard", (req, res) => {
 
 //Orders route
 app.get("/orders", (req, res) => {
-  res.render('orders',{
+  res.render('admin/orders',{
     title: "Orders",
     desc: "Orders"           
   }); 
 });
 //Products route
 app.get("/products", (req, res) => {
-  res.render('products',{
+  res.render('admin/products',{
     title: "Products",
     desc: "Products"           
   }); 
 });
 //Customers route
 app.get("/customers", (req, res) => {
-  res.render('customers',{
+  res.render('admin/customers',{
     title: "Customers",
     desc: "Customers"           
   }); 
 });
 //Reports route
 app.get("/reports", (req, res) => {
-  res.render('reports',{
+  res.render('admin/reports',{
     title: "Reports",
     desc: "Reports"           
   }); 
 });
 //Track Orders route
 app.get("/track", (req, res) => {
-  res.render('track',{
+  res.render('admin/track',{
     title: "Track Orders",
     desc: "Track Orders"           
   }); 
 });
 //Sellers route
 app.get("/sellers", (req, res) => {
-  res.render('sellers',{
+  res.render('admin/sellers',{
     title: "Sellers",
     desc: "Sellers"           
   }); 
