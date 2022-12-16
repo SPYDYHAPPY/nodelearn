@@ -14,7 +14,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
 //partials for webpage
-hbs.registerPartials(__dirname + '/views/admin_partials', function (err) {});
+hbs.registerPartials(__dirname + '/views/admin/admin_partials', function (err) {});
 hbs.registerPartials(path.join(__dirname, '/views/partials'), {
   rename: function (name) {
     // all non-word characters replaced with underscores
