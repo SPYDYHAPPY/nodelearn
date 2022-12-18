@@ -8,7 +8,6 @@ const hbs = require("hbs");
 //const bodyParser = require('body-parser');
 const app = express();
 
-const { writeDB } = require("./db/dbfunction");
 
 //set dynamic views file
 app.set("views", path.join(__dirname, "views"));
