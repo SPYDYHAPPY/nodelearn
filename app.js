@@ -5,8 +5,10 @@ const express = require("express");
 //use hbs view engine
 const hbs = require("hbs");
 //use bodyParser middleware
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const app = express();
+
+const { writeDB } = require("./db/dbfunction");
 
 //set dynamic views file
 app.set("views", path.join(__dirname, "views"));
@@ -63,14 +65,14 @@ app.get("/user-login", (req, res) => {
    res.render('login',{
      title: "User Login",
      desc: "Login Section"           
-   }); 
+   });
 });
 
 //dashboard route
 app.get("/user-dashboard", (req, res) => {
   res.render('admin/dashboard',{
     title: "User Dashboard",
-    desc: "Dashboard"           
+    desc: "Dashboard"
   }); 
 });
 

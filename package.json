@@ -2,6 +2,7 @@
   "name": "advancedev",
   "version": "1.0.0",
   "description": "Js server",
+  "type": "commonjs",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"

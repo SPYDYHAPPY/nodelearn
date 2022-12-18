@@ -31,15 +31,18 @@ document.getElementById('reg_btn').addEventListener('click',
             var p_id = "hsp" + Date.now('dmy');
 
             const m_list = {
+                p_id: p_id,
                 p_name: p_name,
                 p_email: p_email,
                 p_pass: p_pass,
 
             };
+
             localStorage.setItem("person", JSON.stringify(m_list));
             document.getElementById("register_notification").innerHTML = "Registration Successful";
             document.getElementById("register_notification").style.color = "#37733E";
-           
+
+            writeDB(m_list);
             setTimeout(() => {
                 window.location.reload();
             }, 5000);
