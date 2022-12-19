@@ -6,37 +6,108 @@
 
 <div class="container">
   <div class="row">
+
+    {{!-- WEEKLY --}}
     <div class="col-sm-3">
       <div class="card" style="height: 150px;">
         <div class="card-body">
           <h5 class="card-title">Weekly Sale</h5>
-          <a href="#" class="btn btn-primary btn-sm text-end">Explore</a>
+          <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#example1">EXPLORE</a>
         </div>
       </div>
     </div>
+    {{!--WEEKLY MODAL --}}
+    <div class="modal fade" id="example1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Weekly Sale</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="weekly">
+            ...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{!-- MONTHLY --}}
     <div class="col-sm-3">
       <div class="card" style="height: 150px;">
         <div class="card-body">
           <h5 class="card-title">Monthly Sale</h5>
-          <a href="#" class="btn btn-primary btn-sm text-end">Explore</a>
+          <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#example2">EXPLORE</a>
         </div>
       </div>
     </div>
+    {{!--MONTHLY MODAL --}}
+    <div class="modal fade" id="example2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">MONTHLY SALE</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="monthly">
+            ...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{!-- HALF-YEARLY --}}
     <div class="col-sm-3">
       <div class="card" style="height: 150px;">
         <div class="card-body">
           <h5 class="card-title">Half-Yearly Sale</h5>
-          <a href="#" class="btn btn-primary btn-sm text-end">Explore</a>
+          <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#example3">EXPLORE</a>
         </div>
       </div>
     </div>
+    {{!--HALF-YEARLY MODAL --}}
+    <div class="modal fade" id="example3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">HALF-YEARLY SALE</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="half_yearly">
+            ...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{!-- YEARLY --}}
     <div class="col-sm-3">
       <div class="card" style="height: 150px;">
         <div class="card-body">
           <h5 class="card-title">Yearly Sale</h5>
-          <a href="#" class="btn btn-primary btn-sm">Explore</a>
+          <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#example4">EXPLORE</a>
         </div>
       </div>
     </div>
+    {{!-- YEARLY MODAL --}}
+    <div class="modal fade" id="example4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">YEARLY SALE</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="yearly">
+            ...
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
+
+<script src="js/report.js"></script>

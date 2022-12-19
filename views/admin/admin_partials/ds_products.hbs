@@ -6,41 +6,113 @@
 
 <div class="container" style="height: 29rem">
     <div class="row">
+
+        {{!-- NEWEST --}}
         <div class="col-sm-3">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Newest</h5>
                     <p class="card-text">Latest Designs and exciting price.</p>
-                    <a href="#" class="btn btn-outline-secondary btn-sm">EXPLORE</a>
+                    <a href="#" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#example1">EXPLORE</a>
                 </div>
             </div>
         </div>
+        <!-- NEWEST Modal -->
+        <div class="modal fade" id="example1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">LATEST MODELS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="new_brands">
+                       ...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{!-- TOP SELLING --}}
         <div class="col-sm-3">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Top Selling</h5>
                     <p class="card-text">Top selling products and exciting offers.</p>
-                    <a href="#" class="btn btn-primary btn-sm">EXPLORE</a>
+                    <a href="#" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#example2">EXPLORE</a>
                 </div>
             </div>
         </div>
+        <!-- Top Selling Modal -->
+        <div class="modal fade" id="example2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">TOP SELLIGN MODELS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="top_brands">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{!-- TRENDING --}}
         <div class="col-sm-3">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Trending</h5>
                     <p class="card-text">Top Trending designs which makes you different.</p>
-                    <a href="#" class="btn btn-outline-success btn-sm">EXPLORE</a>
+                    <a href="#" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#example3">EXPLORE</a>        
                 </div>
             </div>
         </div>
+        {{!-- TRENDING MODAL --}}
+        <div class="modal fade" id="example3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">TRENDING MODELS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="top_brands2">
+                       ...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{!-- BRANDS --}}
         <div class="col-sm-3">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Brands</h5>
                     <p class="card-text">Top branded products and designs with exciting prices.</p>
-                    <a href="#" class="btn btn-outline-danger btn-sm">EXPLORE</a>
+                    <a href="#" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#example4">EXPLORE</a>
+                </div>
+            </div>
+        </div>
+        {{!-- BRANDS NODALS --}}
+        <div class="modal fade" id="example4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">BRANDED MODELS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="top_brands3">
+                       ...
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="js/store.js"></script>

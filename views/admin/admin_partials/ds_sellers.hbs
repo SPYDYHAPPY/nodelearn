@@ -6,22 +6,56 @@
 
 <div class="container" style="height: 450px;">
     <div class="row">
+        {{!-- URBAN --}}
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">URBAN</h5>
-                    <a href="#" class="btn btn-primary">Explore</a>
+                    <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#example1">EXPLORE</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">SEMI-URBAN</h5>
-                    <a href="#" class="btn btn-primary">Explore</a>
+        {{!--URBANIC MODAL --}}
+        <div class="modal fade" id="example1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">URBANIC </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="urbanic">
+                        ...
+                    </div>
                 </div>
             </div>
         </div>
 
+        {{!-- SEMI-URBAN --}}
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">SEMI-URBAN</h5>
+                    <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#example2">EXPLORE</a>
+                </div>
+            </div>
+        </div>
+        {{!--MONTHLY MODAL --}}
+        <div class="modal fade" id="example2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">SEMI-UURBANIC</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="semi_urbanic">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<script src="js/store.js"></script>
