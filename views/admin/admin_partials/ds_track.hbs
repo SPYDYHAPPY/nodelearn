@@ -1,55 +1,25 @@
 {{!-- Track-Orders --}}
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-    class="navcontent" id="track">
-    <h1 class="h2">Track-Orders</h1>
+  class="navcontent" id="track">
+  <h1 class="h2">Track-Orders</h1>
 </div>
 
 <div class="row">
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Order No</th>
-      <th scope="col">Customer Id</th>
-      <th scope="col">Customer Name</th>
-      <th scope="col">Order Details</th>
-      <th scope="col">City</th>
-      <th scope="col">Order Placed ON</th>
-      <th scope="col">Expected Date</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">0111</th>
-      <td>990011</td>
-      <td>Salman Khan</td>
-      <td>Casual Shirt</td>
-      <td>Mumba</td>
-      <td>12/12/2022</td>
-      <td>25/12/2022</td>
-      <td><button type="button" class="btn btn-secondary btn-sm">TRACK</button></td>
-    </tr>
-    <tr>
-      <th scope="row">0112</th>
-      <td>990022</td>
-      <td>Sahrukh Khan</td>
-      <td>Casual Shirt</td>
-      <td>Mumba</td>
-      <td>15/12/2022</td>
-      <td>25/12/2022</td>
-      <td><button type="button" class="btn btn-secondary btn-sm">TRACK</button></td>
-    </tr>
-    <tr>
-      <th scope="row">0113</th>
-      <td>990033</td>
-      <td>Amir Khan</td>
-      <td>Casual Shirt</td>
-      <td>Mumba</td>
-      <td>19/12/2022</td>
-      <td>25/12/2022</td>
-      <td><button type="button" class="btn btn-secondary btn-sm">TRACK</button></td>
-    </tr>
-    
-  </tbody>
-</table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Order No</th>
+        <th scope="col">Customer Id</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Order Details</th>
+        <th scope="col">City</th>
+        <th scope="col">Order Placed ON</th>
+        <th scope="col">Expected Date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+      <tbody id="tracking"></tbody>
+  </table>
 </div>
+
+<script src="js/track_Orders.js"></script>

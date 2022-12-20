@@ -4,9 +4,6 @@ const newBrand = document.getElementById("new_brands");
 // const topBrand = document.getElementById("top_brands");
 // const topBrand2 = document.getElementById("top_brands2");
 // const topBrand3 = document.getElementById("top_brands3");
-
-const brands = document.querySelectorAll("#top_brands, #top_brands2, #top_brands3");
-
 newBrand.innerHTML = `<table class="table">
 <thead>
     <tr>
@@ -49,6 +46,11 @@ newBrand.innerHTML = `<table class="table">
 
 </tbody>
 </table>`;
+
+
+
+
+const brands = document.querySelectorAll("#top_brands, #top_brands2, #top_brands3");
 
 brands.forEach((element) => {
     element.innerHTML = `<table class="table">
