@@ -55,5 +55,5 @@ trackOrder.forEach((orderstotrack) => {
         </tr>
     `;
 
-track.appendChild(trackdetails);
+    track.appendChild(trackdetails);
 });
