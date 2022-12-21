@@ -1,5 +1,6 @@
 //use path module
 const path = require("path");
+
 //use express module
 const express = require("express");
 //use hbs view engine
@@ -12,6 +13,7 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 //set view engine
 app.set("view engine", "hbs");
+
 
 //partials for webpage
 hbs.registerPartials(__dirname + '/views/admin/admin_partials', function (err) {});
@@ -94,7 +96,7 @@ app.get("/customers", (req, res) => {
   res.render('admin/customers',{
     title: "Customers",
     desc: "Customers"           
-  }); 
+  });
 });
 //Reports route
 app.get("/reports", (req, res) => {

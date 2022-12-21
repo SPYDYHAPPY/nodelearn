@@ -44,7 +44,7 @@ customerDetails.forEach((customerdtls) => {
     const dt_regdate = `${customerdtls.register_date}`;
     const dt_lastpurchase = `${customerdtls.last_purchase}`;
 
-    const customerdetails = document.createElement("dt");
+    const customerdetails = document.createElement("tr");
     customerdetails.classList.add("customerdtls");
 
     customerdetails.innerHTML = `
