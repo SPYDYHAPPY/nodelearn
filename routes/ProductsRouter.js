@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 // Route for products Page
-router.get("/", (req, res) => {
+router.get("/all-products", (req, res) => {
   res.render('all_products', {
     title: "Product List",
     desc: "Products Section"

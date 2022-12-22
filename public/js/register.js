@@ -42,7 +42,6 @@ document.getElementById('reg_btn').addEventListener('click',
             document.getElementById("register_notification").innerHTML = "Registration Successful";
             document.getElementById("register_notification").style.color = "#37733E";
 
-            writeDB(m_list);
             setTimeout(() => {
                 window.location.reload();
             }, 5000);

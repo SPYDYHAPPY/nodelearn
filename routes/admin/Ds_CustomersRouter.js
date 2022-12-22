@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 //Customers route
-router.get("/", (req, res) => {
+router.get('/customers', (req, res) => {
     res.render('admin/customers',{
       title: "Customers",
       desc: "Customers"

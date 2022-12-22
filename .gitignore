@@ -45,7 +45,7 @@ package-lock.json
 special prices copy.hbs
 .vscode
 db
-
+components
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 

@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 //Orders route
-router.get("/", (req, res) => {
+router.get('/orders', (req, res) => {
     res.render('admin/orders',{
       title: "Orders",
       desc: "Orders"           

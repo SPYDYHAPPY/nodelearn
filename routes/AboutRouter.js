@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 // Route for about Page
-router.get("/", (req, res) => {
+router.get("/why-us", (req, res) => {
     res.render('about', {
         title: "Why Us?",
         desc: "About Section"

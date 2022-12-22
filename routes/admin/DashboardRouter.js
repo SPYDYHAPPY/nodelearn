@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 //dashboard route
-router.get("/", (req, res) => {
+router.get('/user-dashboard', (req, res) => {
     res.render('admin/dashboard',{
       title: "User Dashboard",
       desc: "Dashboard"
