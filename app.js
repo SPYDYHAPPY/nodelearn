@@ -1,3 +1,5 @@
+'use strict'
+
 //use path module
 const path = require("path");
 //use express module
