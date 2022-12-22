@@ -52,7 +52,10 @@ document.getElementById('login_btn').addEventListener('click',
             }, 800);
 
         } else if (db_list.p_pass != p_pass) {
-            document.getElementById("login_notification").innerHTML = "Incorrect password";
+            document.getElementById("login_notification").innerHTML = `Incorrect password 
+            <div class="spinner-grow spinner-grow-sm text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+            </div>`;
             document.getElementById("login_notification").style.color = "#F95559";
 
 
