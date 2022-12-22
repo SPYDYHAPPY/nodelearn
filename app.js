@@ -1,6 +1,7 @@
+'use strict'
+
 //use path module
 const path = require("path");
-
 //use express module
 const express = require("express");
 //use hbs view engine
