@@ -8,7 +8,7 @@ const express = require("express");
 const hbs = require("hbs");
 
 //public Routers
-const indexRouter =  require("./routes/HomeRouter");
+const indexRouter = require("./routes/HomeRouter");
 const AboutRouter = require("./routes/AboutRouter");
 const CartRouter = require("./routes/CartRouter");
 const ProductsRouter = require("./routes/ProductsRouter");
@@ -33,7 +33,7 @@ app.set("view engine", "hbs");
 
 
 //admin partials for webpage
-hbs.registerPartials(__dirname + '/views/admin/admin_partials', function (err) {});
+hbs.registerPartials(__dirname + '/views/admin/admin_partials', function (err) { });
 //public partials 
 hbs.registerPartials(path.join(__dirname, '/views/partials'), {
   rename: function (name) {
@@ -43,7 +43,7 @@ hbs.registerPartials(path.join(__dirname, '/views/partials'), {
 });
 
 //set public folder as static folder static file
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')))
 
 //Common URL
 app.use('/', indexRouter);
@@ -66,7 +66,7 @@ var server = app.listen(3000, () => {
   //var host = server.address().address
   var port = server.address().port
 
- // console.log("server is running at http://%s:%s", host, port);
+  // console.log("server is running at http://%s:%s", host, port);
   console.log("server is running at http://localhost:%s", port);
 });
 
