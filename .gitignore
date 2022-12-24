@@ -46,11 +46,11 @@ special prices copy.hbs
 .vscode
 db
 components
-ProductsRouter copy.js
+ProductsRouter_spec.js
 products_list copy.hbs
 products.js
 app copy.js
-HomeRouter copy.js
+HomeRouter_spec.js
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
