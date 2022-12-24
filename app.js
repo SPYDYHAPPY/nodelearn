@@ -46,20 +46,10 @@ hbs.registerPartials(path.join(__dirname, '/views/partials'), {
 app.use(express.static(path.join(__dirname, 'public')))
 
 //Common URL
-app.use('/', indexRouter);
-app.use('/', AboutRouter);
-app.use('/', CartRouter);
-app.use('/', ProductsRouter);
-app.use('/', LoginRouter);
+app.use(indexRouter, AboutRouter, CartRouter, ProductsRouter, LoginRouter);
 
 //Admin URL
-app.use('/', DashboardRouter);
-app.use('/', Ds_OrderRouter);
-app.use('/', Ds_ProductsRouter);
-app.use('/', Ds_CustomersRouter);
-app.use('/', Ds_ReportRouter);
-app.use('/', Ds_TrackRouter);
-app.use('/', Ds_SellerRouter);
+app.use(DashboardRouter,Ds_OrderRouter,Ds_ProductsRouter,Ds_CustomersRouter,Ds_ReportRouter,Ds_TrackRouter,Ds_SellerRouter);
 
 
 var server = app.listen(3000, () => {
