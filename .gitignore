@@ -45,7 +45,6 @@ package-lock.json
 special prices copy.hbs
 .vscode
 db
-components
 ProductsRouter_spec.js
 products_list copy.hbs
 products.js
