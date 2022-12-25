@@ -36,28 +36,43 @@ const customerDetails = [
 
 const cstmr = document.getElementById("customer");
 
-customerDetails.forEach((customerdtls) => {
-    const dt_customerid = `${customerdtls.customer_id}`;
-    const dt_csname = `${customerdtls.customer_name}`;
-    const dt_gender = `${customerdtls.gender}`;
-    const dt_city = `${customerdtls.city}`;
-    const dt_regdate = `${customerdtls.register_date}`;
-    const dt_lastpurchase = `${customerdtls.last_purchase}`;
+// customerDetails.forEach((customerdtls) => {
+//     const dt_customerid = `${customerdtls.customer_id}`;
+//     const dt_csname = `${customerdtls.customer_name}`;
+//     const dt_gender = `${customerdtls.gender}`;
+//     const dt_city = `${customerdtls.city}`;
+//     const dt_regdate = `${customerdtls.register_date}`;
+//     const dt_lastpurchase = `${customerdtls.last_purchase}`;
+//});
 
+const newCustousers = customerDetails.map((user) => {
+    const { customer_id, customer_name, gender, city, register_date, last_purchase } = user;
+    return { customer_id, customer_name, gender, city, register_date, last_purchase }
+})
+
+for (let happy of newCustousers) {
+    const p_id = happy.customer_id;
+    const p_name = happy.customer_name;
+    const p_gender = happy.gender;
+    const p_city = happy.city;
+    const p_register_date = happy.register_date;
+    const p_lp = happy.last_purchase;
+    
+    
     const customerdetails = document.createElement("tr");
     customerdetails.classList.add("customerdtls");
-
+    
     customerdetails.innerHTML = `
     <tr>
-       <th scope="row">${dt_customerid}</th>
-       <td>${dt_csname}</td>
-       <td>${dt_gender}</td>
-       <td>${dt_city}</td>
-       <td>${dt_regdate}</td>
-       <td>${dt_lastpurchase}</td>
-       <td><button type="button" class="btn btn-secondary btn-sm">VIEW</button></td>
-   </tr>
-   `;
-
+    <th scope="row">${p_id}</th>
+    <td>${p_name}</td>
+    <td>${p_gender}</td>
+    <td>${p_city}</td>
+    <td>${p_register_date}</td>
+    <td>${p_lp}</td>
+    <td><button type="button" class="btn btn-secondary btn-sm">VIEW</button></td>
+    </tr>
+    `;
+    
     cstmr.appendChild(customerdetails);
-});
+}

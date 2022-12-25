@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
         const p_rating = elem.rating;
         const p_img = elem.filename;
 
-        if (p_id === 3) {
+        if (p_id === 13) {
             res.render('index', {
                 title: "Happy-shop",
                 desc: "Happy Shop",
