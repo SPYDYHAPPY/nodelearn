@@ -1,15 +1,11 @@
 //use express module
 const express = require("express");
 const router = express.Router();
+let ProductPage = require("../../Controllers/admin/ProductController")
 
 
 //Products route
-router.get('/products', (req, res) => {
-    res.render('admin/products',{
-      title: "Products",
-      desc: "Products"           
-    }); 
-  });
+router.get('/products', ProductPage);
 
     
 module.exports = router;

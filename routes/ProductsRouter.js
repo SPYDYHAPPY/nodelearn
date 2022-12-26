@@ -1,21 +1,13 @@
 //use express module
 const express = require("express");
 const router = express.Router();
+let {productList, Singleproduct} = require("../Controllers/ProductController");
 
-const hbs = require("hbs");
-const { products } = require("../products");
 
-hbs.registerHelper("list", function loadProducts(item, options) {
-  const itemsAsHtml = products.map(item => options.fn(item));
-  return itemsAsHtml.join("\n");
-});
 
 // Route for products Page
-router.get("/all-products", (req, res) => {
-  res.render('all_products', {
-    title: "Product List",
-    desc: "Products Section"
-  });
-});
+router.get("/all-products",productList)
+router.get("/product/:productid", Singleproduct)
+
 
 module.exports = router;

@@ -1,15 +1,10 @@
 //use express module
 const express = require("express");
 const router = express.Router();
-
+let OrderPage = require("../../Controllers/admin/OrderController")
 
 //Orders route
-router.get('/orders', (req, res) => {
-    res.render('admin/orders',{
-      title: "Orders",
-      desc: "Orders"           
-    }); 
-  });
+router.get('/orders', OrderPage);
 
     
 module.exports = router;

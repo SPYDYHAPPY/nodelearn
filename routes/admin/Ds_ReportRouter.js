@@ -2,14 +2,10 @@
 //use express module
 const express = require("express");
 const router = express.Router();
+let ReportsPage = require("../../Controllers/admin/ReportController")
 
 
 //Reports route
-router.get('/reports', (req, res) => {
-    res.render('admin/reports',{
-      title: "Reports",
-      desc: "Reports"           
-    }); 
-  });
+router.get('/reports', ReportsPage);
   
   module.exports = router;

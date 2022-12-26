@@ -1,14 +1,10 @@
 //use express module
 const express = require("express");
 const router = express.Router();
+let cartPage = require("../Controllers/CartController");
 
 //local-store route
-router.get("/cart", (req, res) => {
-  res.render('cart_load',{
-    title: "Purchase",
-    desc: "Cart Section"           
-  }); 
-});
+router.get("/cart", cartPage);
 
 
 module.exports = router;
