@@ -3,6 +3,9 @@ const { products } = require("../products");
 //home controller
 const Home = (req, res) => {
 
+    let Today = new Date()
+    let Currdate = Today.getHours()
+
     const newProducts = products.map((product) => {
         const { id, title, description, type, price, rating, filename } = product;
         return { id, title, description, type, price, rating, filename };
@@ -17,7 +20,7 @@ const Home = (req, res) => {
         const p_rating = elem.rating;
         const p_img = elem.filename;
 
-        if (p_id === 13) {
+        if (p_id === Currdate) {
             res.render('index', {
                 title: "Happy-shop",
                 desc: "Happy Shop",

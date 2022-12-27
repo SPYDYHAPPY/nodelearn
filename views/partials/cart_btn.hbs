@@ -1,16 +1,9 @@
-<form class="d-flex" action="/cart">
-  <button class="btn btn-outline-dark" type="submit">
-    <i class="bi-cart-fill me-1"></i>
-    Cart
-    <span
-      class="badge bg-dark text-white ms-1 rounded-pill"
-      id="cartquantity"
-    ></span>
-  </button>
-</form>
-<form class="d-flex mx-2" action="/user-login">
-  <button  class="btn btn-outline-dark" type="submit">
-     <i class="bi-person me-1"></i>
-    login
-  </button>
-</form>
+<div class="d-flex justify-content-center">
+  <a class="btn btn-outline-dark rounded-pill" href="/cart" title="Cart">
+    <i class="bi-cart-fill me-1"></i>Cart  
+    <span class="badge bg-dark text-white ms-1 rounded-pill" id="cartquantity"></span>
+  </a>
+  <a class="btn btn-outline-dark rounded-pill mx-2" href="/user-login" title="login">
+    <i class="bi-person"></i>
+  </a>
+</div>

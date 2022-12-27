@@ -10,32 +10,29 @@ const productList = (req, res) => {
     res.render('all_products', {
         title: "Product List",
         desc: "Products Section"
-    });
-    res.send(products);
+    })
 }
 
-const Singleproduct = (req, res) => {
+const Loadproduct = (req, res) => {
+
+
+    let single_id = req.params.productid
 
     const newProducts = products.map((product) => {
         const { id, title, description, type, price, rating, filename } = product;
         return { id, title, description, type, price, rating, filename };
     })
 
-    for (let elem of newProducts) {
-        let p_id = elem.id;
-        const p_title = elem.title;
-        const p_type = elem.type;
-        const p_description = elem.description;
-        const p_price = elem.price;
-        const p_rating = elem.rating;
-        const p_img = elem.filename;
-
-
-       if (p_id == req.params.productid) {
-           res.send(p_title + "\n" + p_type + "\n" + p_description + "\n" + p_price + "\n" + p_rating) 
-        }
-    }
-    res.status(404).send("product not found")
+    res.render('product_details', {
+        title: "Product List",
+        desc: "Products Section",
+        // p_title,
+        // p_type,
+        // p_description,
+        // p_price,
+        // p_rating,
+        // p_img
+    })
 }
 
-module.exports = { productList, Singleproduct }
+module.exports = { productList, Loadproduct }
