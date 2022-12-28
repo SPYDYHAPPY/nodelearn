@@ -4,7 +4,7 @@ const { products } = require("../products");
 const Home = (req, res) => {
 
     let Today = new Date()
-    let Currdate = Today.getHours()
+    let Currdate = Today.getMinutes() % 49
 
     const newProducts = products.map((product) => {
         const { id, title, description, type, price, rating, filename } = product;
@@ -24,6 +24,7 @@ const Home = (req, res) => {
             res.render('index', {
                 title: "Happy-shop",
                 desc: "Happy Shop",
+                p_id,
                 p_title,
                 p_type,
                 p_description,
@@ -35,4 +36,4 @@ const Home = (req, res) => {
     }
 }
 
-module.exports = Home ;
+module.exports = Home;

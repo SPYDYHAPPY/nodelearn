@@ -1,13 +1,13 @@
 <!-- Product section-->
-<section class="py-1 mb-4">
-  <div class="container px-4 px-lg-5 my-5">
+<section class="py-1 bg-light">
+  <div class="container px-4 px-lg-5 my-4">
     <div class="row gx-4 gx-lg-5 align-items-center">
-      <div class="col-md-5">
+      <div class="col-md-4 mx-4">
         {{!-- <img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." />
         --}}
         <img class="card-img-top mb-5 mb-md-0" src="assets/images/{{ p_img }}" height="500" width="400" alt="..." />
       </div>
-      <div class="col-md-7">
+      <div class="col-md-6">
         <sub class="small mb-1 badge bg-primary text-capitalize">Rating: {{ p_rating }}</sub>
         <sub class="small mb-1 badge bg-info text-uppercase">{{ p_type }}</sub>
         <sub class="small mb-1 badge bg-secondary text-uppercase">today sale</sub>
@@ -18,14 +18,15 @@
         </div>
         <p class="lead">{{ p_description }}</p>
         <span id="notification"></span>
-        <div class="d-flex">
+        <div class="hstack gap-2">
           {{!-- <button class="me-3" onclick="increment()">+</button>
           <button class="me-3" onclick="decrement()">-</button> --}}
-          <input class="form-control text-center me-3" id="inputQuantity" type="num" style="max-width: 5rem;"></input>
-          <button id="quantity" class="btn btn-outline-dark flex-shrink-0" type="button">
+          <input class="form-control text-center rounded-pill" id="inputQuantity" type="num" style="max-width: 5rem;"></input>
+          <button id="quantity" class="btn btn-outline-dark flex-shrink-0 rounded-pill" type="button">
             <i class="bi-cart-fill me-1"></i>
             Add to cart
           </button>
+          <a href="/product/{{ p_id }}" class="btn btn-outline-primary rounded-pill">Explore</a>
         </div>
       </div>
     </div>

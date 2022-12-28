@@ -31,6 +31,8 @@ app.set("views", path.join(__dirname, "views"));
 //set view engine
 app.set("view engine", "hbs");
 
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 //admin partials for webpage
 hbs.registerPartials(__dirname + '/views/admin/admin_partials', function (err) { });
@@ -44,6 +46,7 @@ hbs.registerPartials(path.join(__dirname, '/views/partials'), {
 
 //set public folder as static folder static file
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public', 'assets', 'images')))
 
 //Common URL
 app.use(indexRouter, AboutRouter, CartRouter, ProductsRouter, LoginRouter);

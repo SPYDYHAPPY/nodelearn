@@ -13,26 +13,23 @@ const productList = (req, res) => {
     })
 }
 
-const Loadproduct = (req, res) => {
-
+const loadProduct = (req, res) => {
 
     let single_id = req.params.productid
 
-    const newProducts = products.map((product) => {
-        const { id, title, description, type, price, rating, filename } = product;
-        return { id, title, description, type, price, rating, filename };
-    })
+    const product = products.find(p => p.id.toLocaleString() === single_id.toLocaleString())
+    
 
     res.render('product_details', {
-        title: "Product List",
-        desc: "Products Section",
-        // p_title,
-        // p_type,
-        // p_description,
-        // p_price,
-        // p_rating,
-        // p_img
+        title: product.title + "- " + product.type,
+        desc: product.type,
+        p_title: product.title,
+        p_type: product.type,
+        p_description: product.description,
+        p_price: product.price,
+        p_img: product.filename,
+        p_rating: product.rating
     })
 }
 
-module.exports = { productList, Loadproduct }
+module.exports = { productList, loadProduct }
