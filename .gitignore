@@ -47,7 +47,6 @@ special prices copy.hbs
 db
 ProductsRouter_spec.js
 products_list copy.hbs
-products.js
 app copy.js
 HomeRouter_spec.js
 
