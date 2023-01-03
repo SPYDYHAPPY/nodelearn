@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>{{title}}</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        .form-signin {
+            width: 100%;
+            max-width: 350px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="py-1 mb-3 mt-lg-4">
+        <div class="container d-flex justify-content-center px-4 px-lg-5 my-3 overflow-hidden">
+            <main class="form-signin">
+                <form action="/user-dashboard">
+                    <div class="text-center">
+                        <img class="mb-4" src="assets/user.svg" alt="" width="82" height="67">
+                        <h1 class="h3 mb-3 fw-normal text-uppercase">Profile Reset Password</h1>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <input type="text" class="form-control rounded-pill" placeholder="user name"
+                                required="required">
+                        </div>
+                        <p class="text-center">OR</p>
+                        <div class="col-md-12 mb-3">
+                            <input type="email" class="form-control rounded-pill" placeholder="demo@example.com"
+                                required="required">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="date" class="form-control rounded-pill" title="date of birth">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <select class="form-control form-select rounded-pill" aria-label="Default select example">
+                                <option selected>select your role</option>
+                                <option value="admin">Admin</option>
+                                <option value="staff">Staff</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <input type="password" class="form-control rounded-pill" placeholder="Password"
+                                required="required">
+                        </div>
+
+                        <div class="checkbox mb-3 mx-4">
+                            <label>
+                                <input type="checkbox" value="remember-me" /> Remember Me
+                            </label>
+                        </div>
+
+                        <div class="d-flex gap-2 justify-content-end">
+                            <button class="w-50 btn btn-outline-secondary rounded-pill" type="reset">Cancel</button>
+                            <button class="w-50 btn btn-outline-primary rounded-pill" type="submit">Reset
+                                Password</button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </section>
+
+    {{> footer}}

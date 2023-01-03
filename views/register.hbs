@@ -17,6 +17,8 @@
         .form-signin {
             width: 100%;
             max-width: 350px;
+            padding-right: 1.5em;
+            margin: auto;
         }
 
         .form-signin .checkbox {
@@ -81,42 +83,70 @@
                         <form action="/user-dashboard">
                             <div class="text-center">
                                 <img class="mb-4" src="assets/user.svg" alt="" width="82" height="67">
-                                <h1 class="h3 mb-3 fw-normal text-uppercase">Profile Login</h1>
+                                <h1 class="h3 mb-3 fw-normal text-uppercase">Profile Register</h1>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" class="form-control rounded-pill" placeholder="full name"
+                                        required="required">
+                                </div>
+                                <div class="col-md-6 mb-2">
                                     <input type="text" class="form-control rounded-pill" placeholder="user name"
                                         required="required">
                                 </div>
-                                <p>OR</p>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2">
                                     <input type="email" class="form-control rounded-pill" placeholder="demo@example.com"
                                         required="required">
                                 </div>
 
-                                <div class="col-md-12 mb-3">
+                                {{!-- <div class="col-md-5 mb-2">
+                                    <select class="form-control form-select rounded-pill"
+                                        aria-label="Default select example">
+                                        <option selected>your Role</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="staff">Staff</option>
+                                        <option value="user">User</option>
+                                    </select>
+                                </div> --}}
+                                <div class="col-md-6 mb-2">
+                                    <input type="date" class="form-control rounded-pill">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <select class="form-control form-select rounded-pill"
+                                        aria-label="Default select example">
+                                        <option selected>select your Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-2">
                                     <input type="password" class="form-control rounded-pill" placeholder="Password"
                                         required="required">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <input type="password" class="form-control rounded-pill"
+                                        placeholder="confirm Password" required="required">
                                 </div>
 
                                 <div class="checkbox mb-3 mx-4">
                                     <label>
-                                        <input type="checkbox" value="remember-me"> Remember Me
+                                        <input type="checkbox" value="remember-me"> Agree to our terms and conditions
                                     </label>
                                 </div>
 
                                 <div class="d-flex gap-2 justify-content-end">
-                                    <button class="w-25 btn btn-outline-secondary rounded-pill"
+                                    <button class="w-25 btn btn-sm btn-outline-secondary rounded-pill"
                                         type="reset">Reset</button>
-                                    <button class="w-25 btn btn-outline-primary rounded-pill"
-                                        type="submit">Signin</button>
+                                    <button class="w-25 btn btn-sm btn-outline-primary rounded-pill"
+                                        type="submit">Submit</button>
                                 </div>
                             </div>
                         </form>
                         <div class="hstack gap-0 py-3">
                             <a class="nav-link" href="/user-reset-pass"><i class="bi-person-fill-gear"></i>forgot password ?</a>
-                            <a class="nav-link" href="/user-reg"><i class="bi-person-fill-lock"></i>register here</a>
+                            <a class="nav-link" href="/user-login"><i class="bi-person-fill-lock"></i>login Now</a>
                         </div>
                     </main>
                 </div>

@@ -8,19 +8,15 @@ const express = require("express");
 const hbs = require("hbs");
 
 //public Routers
-const indexRouter = require("./routes/HomeRouter");
-const AboutRouter = require("./routes/AboutRouter");
-const CartRouter = require("./routes/CartRouter");
-const ProductsRouter = require("./routes/ProductsRouter");
-const LoginRouter = require("./routes/LoginRouter");
+const commonrouter = require("./routes/routes")
 //admin Routers
-const DashboardRouter = require("./routes/admin/DashboardRouter");
-const Ds_OrderRouter = require("./routes/admin/Ds_OrderRouter");
-const Ds_ProductsRouter = require("./routes/admin/Ds_ProductsRouter");
-const Ds_CustomersRouter = require("./routes/admin/Ds_CustomersRouter");
-const Ds_ReportRouter = require("./routes/admin/Ds_ReportRouter");
-const Ds_TrackRouter = require("./routes/admin/Ds_TrackRouter");
-const Ds_SellerRouter = require("./routes/admin/Ds_SellerRouter");
+// const DashboardRouter = require("./routes/admin/DashboardRouter");
+// const Ds_OrderRouter = require("./routes/admin/Ds_OrderRouter");
+// const Ds_ProductsRouter = require("./routes/admin/Ds_ProductsRouter");
+// const Ds_CustomersRouter = require("./routes/admin/Ds_CustomersRouter");
+// const Ds_ReportRouter = require("./routes/admin/Ds_ReportRouter");
+// const Ds_TrackRouter = require("./routes/admin/Ds_TrackRouter");
+// const Ds_SellerRouter = require("./routes/admin/Ds_SellerRouter");
 
 //app load
 const app = express();
@@ -49,10 +45,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'public', 'assets', 'images')))
 
 //Common URL
-app.use(indexRouter, AboutRouter, CartRouter, ProductsRouter, LoginRouter);
+app.use(commonrouter)
 
 //Admin URL
-app.use(DashboardRouter,Ds_OrderRouter,Ds_ProductsRouter,Ds_CustomersRouter,Ds_ReportRouter,Ds_TrackRouter,Ds_SellerRouter);
+// app.use(DashboardRouter,Ds_OrderRouter,Ds_ProductsRouter,Ds_CustomersRouter,Ds_ReportRouter,Ds_TrackRouter,Ds_SellerRouter);
 
 
 var server = app.listen(3000, () => {

@@ -1,15 +1,20 @@
-const { products } = require("../products");
-const { readDB, writeDB } = require("../dbfunction");
+const fs = require('fs')
+const path = require('path')
+const { products } = require("../products")
+const { readDB, writeDB } = require("../dbfunction")
+
+const datacheck = path.join(__dirname, "./db/todaySale.json")
 
 //home controller
 const Home = (req, res) => {
   let Today = new Date();
   let Currdate = Today.getDate();
 
-  let cartLoad = readDB();
 
-  if (cartLoad != "") {
-    cartQuantity = cartLoad.cart_qn
+  let purchasehistory = readDB()
+
+  if (purchasehistory != "") {
+    cartQuantity = purchasehistory.length
   } else {
     cartQuantity = 0
   }
@@ -17,16 +22,8 @@ const Home = (req, res) => {
 
   const newProducts = products.map((product) => {
     const { id, title, description, type, price, rating, filename } = product;
-    return {
-      id,
-      title,
-      description,
-      type,
-      price,
-      rating,
-      filename,
-    };
-  });
+    return { id, title, description, type, price, rating, filename }
+  })
 
   for (let elem of newProducts) {
     const p_id = elem.id;
@@ -48,7 +45,7 @@ const Home = (req, res) => {
         p_price,
         p_rating,
         p_img,
-        cartQuantity
+        cartQuantity,
       });
     }
   }
@@ -78,4 +75,4 @@ const addtoCart = (req, res) => {
 module.exports = {
   Home,
   addtoCart,
-};
+}

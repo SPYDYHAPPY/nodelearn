@@ -1,8 +1,8 @@
-const login = (req, res) => {
+const loginPage = (req, res) => {
     res.render('login', {
       title: "User Login",
       desc: "Login Section"
     })
   }
 
-  module.exports = login;
+  module.exports = { loginPage }
