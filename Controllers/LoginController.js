@@ -1,8 +1,22 @@
+const { readDB, writeDB } = require("../dbfunction")
+
+
+
 const loginPage = (req, res) => {
+  let purchasehistory = readDB()
+
+  if (purchasehistory != "") {
+    cartQuantity = purchasehistory.length
+  } else {
+    cartQuantity = 0
+  }
     res.render('login', {
       title: "User Login",
-      desc: "Login Section"
+      desc: "Login Section",
+      cartQuantity
     })
   }
+
+
 
   module.exports = { loginPage }

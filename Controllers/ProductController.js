@@ -1,4 +1,5 @@
 const hbs = require("hbs");
+const { readDB } = require("../dbfunction")
 const { products } = require("../products");
 
 hbs.registerHelper("list", function loadProducts(item, options) {
@@ -7,11 +8,23 @@ hbs.registerHelper("list", function loadProducts(item, options) {
 });
 
 const productList = (req, res) => {
+
+    let purchasehistory = readDB()
+
+    if (purchasehistory != "") {
+      cartQuantity = purchasehistory.length
+    } else {
+      cartQuantity = 0
+    }
+
     res.render('all_products', {
         title: "Product List",
-        desc: "Products Section"
+        desc: "Products Section",
+        cartQuantity
     })
 }
+
+
 
 const loadProduct = (req, res) => {
 
@@ -19,6 +32,13 @@ const loadProduct = (req, res) => {
 
     const product = products.find(p => p.id.toLocaleString() === single_id.toLocaleString())
     
+    let purchasehistory = readDB()
+
+    if (purchasehistory != "") {
+      cartQuantity = purchasehistory.length
+    } else {
+      cartQuantity = 0
+    }
 
     res.render('product_details', {
         title: product.title + "- " + product.type,
@@ -28,7 +48,8 @@ const loadProduct = (req, res) => {
         p_description: product.description,
         p_price: product.price,
         p_img: product.filename,
-        p_rating: product.rating
+        p_rating: product.rating,
+        cartQuantity
     })
 }
 

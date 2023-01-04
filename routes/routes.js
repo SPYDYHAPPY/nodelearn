@@ -9,6 +9,8 @@ const { loginPage } = require("../Controllers/LoginController")
 const { RegisterPage} = require("../Controllers/RegisterController")
 const { forgotPass } = require("../controllers/ForgotpassContoller")
 
+const { errorHandler } = require("../middleware/errorHandler")
+
 
 
 //route for home page
@@ -34,6 +36,9 @@ router.get("/why-us", aboutPage)
 
 //local-store route
 router.get("/cart", cartload)
+
+//404 not found
+router.get('*', errorHandler)
 
 module.exports = router
 
