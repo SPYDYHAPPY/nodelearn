@@ -1,6 +1,7 @@
 const hbs = require("hbs");
-const { readDB } = require("../dbfunction")
-const { products } = require("../products");
+const { readDB, writeDB } = require("../middleware/dbfunction")
+const { products } = require("../db/products");
+const { v4: uuidv4 } = require('uuid')
 
 hbs.registerHelper("list", function loadProducts(item, options) {
     const itemsAsHtml = products.map(item => options.fn(item));
@@ -53,4 +54,29 @@ const loadProduct = (req, res) => {
     })
 }
 
-module.exports = { productList, loadProduct }
+const ProdutsaddCart = (req, res) => {
+
+  var cart_qn = 0;
+  var quantity = parseInt(req.body.praddcart);
+  var product_price = parseInt(req.body.p_price) * quantity;
+  var product_title = req.body.p_title;
+
+  //var pr_id = `purchase${Date.now()}`;
+
+  if (quantity > 0) {
+    let cartToSave = {
+      cart_id: uuidv4(),
+      quantity: quantity,
+      cart_qn: cart_qn + 1,
+      product_title: product_title,
+      product_price: product_price,
+    };
+    writeDB(cartToSave);
+    res.redirect("/all-products");
+  } else {
+    res.redirect("/all-products");
+  }
+
+}
+
+module.exports = { productList, loadProduct, ProdutsaddCart }

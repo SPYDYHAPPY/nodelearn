@@ -1,9 +1,11 @@
 const fs = require('fs')
 const hbs = require('hbs')
 const path = require('path')
-const { readDB, writeDB } = require("../dbfunction")
-
+const { readDB, writeDB } = require("../middleware/dbfunction")
+const { products } = require("../db/products")
 const cartSale = path.join(__dirname, "../db/todaySale.json")
+
+
 
 if (fs.existsSync(cartSale)) {
   const Saleitems = require("../db/todaySale")
@@ -41,4 +43,31 @@ const cartload = (req, res) => {
   });
 }
 
-module.exports = { cartload }
+const Singleitem = (req, res) => {
+
+
+  let purchasehistory = readDB()
+
+  if (purchasehistory != "") {
+    cartQuantity = purchasehistory.length
+  } else {
+    cartQuantity = 0
+  }
+
+  
+  let itemOfcart = req.params.cartid
+
+
+  const ItemsinCart =  purchasehistory.find(cart => cart.cart_id.toLocaleString() === itemOfcart.toLocaleString())
+
+  res.render("singlecartitem", {
+    title: "SingleItem",
+    desc: "singleitem",
+    cartQuantity,
+    cart_title: ItemsinCart.product_title,
+    cart_pqun: ItemsinCart.quantity,
+    cart_price: ItemsinCart.product_price
+  })
+}
+
+module.exports = { cartload, Singleitem }

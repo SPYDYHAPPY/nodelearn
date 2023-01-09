@@ -1,4 +1,4 @@
-const { readDB } = require("../dbfunction")
+const { readDB } = require("../middleware/dbfunction")
  
 
 

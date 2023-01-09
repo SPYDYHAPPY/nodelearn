@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
-const { products } = require("../products")
-const { readDB, writeDB } = require("../dbfunction")
+const { products } = require("../db/products")
+const { readDB, writeDB } = require("../middleware/dbfunction")
 
 const datacheck = path.join(__dirname, "./db/todaySale.json")
 
@@ -56,12 +56,12 @@ const addtoCart = (req, res) => {
   var quantity = parseInt(req.body.today_Sale);
   var product_price = parseInt(req.body.p_price) * quantity;
   var product_title = req.body.p_title;
-
-  var pr_id = `purchase${Date.now()}`;
+  const { v4: uuidv4 } = require('uuid')
+  //var pr_id = `purchase${Date.now()}`;
 
   if (quantity > 0) {
     let cartToSave = {
-      cart_id: pr_id,
+      cart_id: uuidv4(),
       quantity: quantity,
       cart_qn: cart_qn + 1,
       product_title: product_title,

@@ -26,12 +26,16 @@
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
               <div class="d-flex justify-content-end mt-5 py-5 me-4">
-                <input class="form-control text-center me-3 rounded-pill" id="inputQuantity" type="num"
-                  style="max-width: 5rem;"></input>
-                <button id="quantity" class="btn btn-outline-dark flex-shrink-0 rounded-pill" type="button">
-                  <i class="bi-cart-fill me-1"></i>
-                  Add to cart
-                </button>
+                <form class="hstack gap-1" action="/addtocart" method="post">
+                  <input type="hidden" name="p_title" value="{{ p_title }}">
+                  <input type="hidden" name="p_price" value="{{ p_price }}">
+                  <input class="form-control text-center me-3 rounded-pill" name="praddcart" id="inputQuantity"
+                    type="num" style="max-width: 5rem;"></input>
+                  <button id="quantity" class="btn btn-outline-dark flex-shrink-0 rounded-pill" type="submit">
+                    <i class="bi-cart-fill me-1"></i>
+                    Add to cart
+                  </button>
+                </form>
               </div>
             </div>
           </div>

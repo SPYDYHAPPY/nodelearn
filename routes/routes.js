@@ -2,11 +2,11 @@
 const express = require("express")
 const router = express.Router()
 const { Home, addtoCart } = require("../Controllers/HomeController")
-const { productList, loadProduct } = require("../Controllers/ProductController")
+const { productList, loadProduct, ProdutsaddCart } = require("../Controllers/ProductController")
 const { aboutPage } = require("../Controllers/AboutController")
-const { cartload } = require("../Controllers/CartController");
+const { cartload, Singleitem } = require("../Controllers/CartController");
 const { loginPage } = require("../Controllers/LoginController")
-const { RegisterPage} = require("../Controllers/RegisterController")
+const { RegisterPage } = require("../Controllers/RegisterController")
 const { forgotPass } = require("../controllers/ForgotpassContoller")
 
 const { errorHandler } = require("../middleware/errorHandler")
@@ -21,6 +21,7 @@ router.post("/cartsave", addtoCart)
 // Route for products Page
 router.get("/all-products", productList)
 router.get("/product/:productid", loadProduct)
+router.post("/addtocart", ProdutsaddCart)
 
 //login route
 router.get('/user-login', loginPage)
@@ -36,6 +37,9 @@ router.get("/why-us", aboutPage)
 
 //local-store route
 router.get("/cart", cartload)
+router.route("/cartitem/:cartid")
+    .get(Singleitem)
+    //.put()
 
 //404 not found
 router.get('*', errorHandler)

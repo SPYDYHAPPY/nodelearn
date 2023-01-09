@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const Cartitems = path.join(__dirname, "./db/todaySale.json")
+const Cartitems = path.join(__dirname, "../db/todaySale.json")
 
 function createDirectory(dir, options) {
     fs.mkdir(dir, options, (err) => {
@@ -20,20 +20,20 @@ function readDB(dbName = "todaySale.json") {
         } else {
             return res = 'no data found'
         }
-    } else {
-        return res = 0
     }
+    return res = 0
+
 }
 
 function writeDB(obj, dbName = "todaySale.json") {
 
     if (!obj) return console.log("please provide data to save")
 
-    createDirectory('./db', { recursive: true })
+    createDirectory('../db', { recursive: true })
     try {
         if (fs.existsSync(Cartitems)) {
 
-            const cartList = require('./db/todaySale')
+            const cartList = require('../db/todaySale')
 
             cartList.push(obj)
 

@@ -1,4 +1,4 @@
-const { readDB, writeDB } = require("../dbfunction")
+const { readDB, writeDB } = require("../middleware/dbfunction")
 
 const RegisterPage = (req, res) => {
 
