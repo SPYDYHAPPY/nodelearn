@@ -1,0 +1,16 @@
+[
+  {
+    "cart_id": "46a3d2ff-340c-44ba-b241-1fb533a459c1",
+    "quantity": 4,
+    "cart_qn": 1,
+    "product_title": "Lemon and salt",
+    "product_price": 60
+  },
+  {
+    "cart_id": "1e2bc009-35dc-4498-b9f9-e3ec78d64cb1",
+    "quantity": 4,
+    "cart_qn": 1,
+    "product_title": "Asparagus",
+    "product_price": 72
+  }
+]
