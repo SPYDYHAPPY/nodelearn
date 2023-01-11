@@ -11,3 +11,15 @@ w - WO
 t - A / B
 f - A / B
 s - A / B
+
+
+services
+customer base
+office location
+site gallery
+plan
+feedback
+monitering
+work schedule
+Festive Discount
+employee
