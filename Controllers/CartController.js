@@ -54,20 +54,26 @@ const Singleitem = (req, res) => {
     cartQuantity = 0
   }
 
-  
+
   let itemOfcart = req.params.cartid
 
 
-  const ItemsinCart =  purchasehistory.find(cart => cart.cart_id.toLocaleString() === itemOfcart.toLocaleString())
+  const ItemsinCart = purchasehistory.find(cart => cart.cart_id.toLocaleString() === itemOfcart.toLocaleString())
 
-  res.render("singlecartitem", {
-    title: "SingleItem",
-    desc: "singleitem",
-    cartQuantity,
-    cart_title: ItemsinCart.product_title,
-    cart_pqun: ItemsinCart.quantity,
-    cart_price: ItemsinCart.product_price
-  })
+
+  try {
+    
+    res.render("PurchaseCart", {
+      title: "SingleItem",
+      desc: "singleitem",
+      cartQuantity,
+      cart_title: ItemsinCart.product_title,
+      cart_pqun: ItemsinCart.quantity,
+      cart_price: ItemsinCart.product_price
+    })
+  } catch (error) {
+    console.log("error" + error.message)
+  }
 }
 
 module.exports = { cartload, Singleitem }

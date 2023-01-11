@@ -37,9 +37,8 @@ router.get("/why-us", aboutPage)
 
 //local-store route
 router.get("/cart", cartload)
-router.route("/cartitem/:cartid")
-    .get(Singleitem)
-    //.put()
+router.get("/Incart/:cartid", Singleitem)
+
 
 //404 not found
 router.get('*', errorHandler)
