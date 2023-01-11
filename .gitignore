@@ -44,7 +44,7 @@ jspm_packages/
 package-lock.json
 special prices copy.hbs
 .vscode
-db
+db_ext
 ProductsRouter_spec.js
 products_list copy.hbs
 app copy.js
