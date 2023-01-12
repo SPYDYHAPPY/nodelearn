@@ -6,7 +6,7 @@ const { productList, loadProduct, ProdutsaddCart } = require("../Controllers/Pro
 const { aboutPage } = require("../Controllers/AboutController")
 const { cartload, Singleitem } = require("../Controllers/CartController");
 const { loginPage } = require("../Controllers/LoginController")
-const { RegisterPage } = require("../Controllers/RegisterController")
+const { RegisterPage, Processregistration } = require("../Controllers/RegisterController")
 const { forgotPass } = require("../controllers/ForgotpassContoller")
 
 const { errorHandler } = require("../middleware/errorHandler")
@@ -27,6 +27,8 @@ router.post("/addtocart", ProdutsaddCart)
 router.get('/user-login', loginPage)
 //register route
 router.get('/user-reg', RegisterPage)
+router.post('/regprocess', Processregistration)
+
 //forgot password route
 router.get('/user-reset-pass', forgotPass)
 

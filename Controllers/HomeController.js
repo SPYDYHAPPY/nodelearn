@@ -1,3 +1,4 @@
+const { v4: uuidv4 } = require('uuid')
 const fs = require('fs')
 const path = require('path')
 const { products } = require("../db/products")
@@ -56,7 +57,6 @@ const addtoCart = (req, res) => {
   var quantity = parseInt(req.body.today_Sale);
   var product_price = parseInt(req.body.p_price) * quantity;
   var product_title = req.body.p_title;
-  const { v4: uuidv4 } = require('uuid')
   //var pr_id = `purchase${Date.now()}`;
 
   if (quantity > 0) {

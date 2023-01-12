@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-md-4">
                     <main class="form-signin">
-                        <form action="/user-dashboard">
+                        <form action="/regprocess" method="post">
                             <div class="text-center">
                                 <img class="mb-4" src="assets/user.svg" alt="" width="82" height="67">
                                 <h1 class="h3 mb-3 fw-normal text-uppercase">Profile Register</h1>
@@ -88,15 +88,15 @@
 
                             <div class="row">
                                 <div class="col-md-6 mb-2">
-                                    <input type="text" class="form-control rounded-pill" placeholder="full name"
+                                    <input type="text" name="Ufullname" class="form-control rounded-pill" placeholder="full name"
                                         required="required">
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <input type="text" class="form-control rounded-pill" placeholder="user name"
+                                    <input type="text" name="Uusername" class="form-control rounded-pill" placeholder="user name"
                                         required="required">
                                 </div>
                                 <div class="col-md-12 mb-2">
-                                    <input type="email" class="form-control rounded-pill" placeholder="demo@example.com"
+                                    <input type="email" name="Uemail" class="form-control rounded-pill" placeholder="demo@example.com"
                                         required="required">
                                 </div>
 
@@ -110,29 +110,29 @@
                                     </select>
                                 </div> --}}
                                 <div class="col-md-6 mb-2">
-                                    <input type="date" class="form-control rounded-pill">
+                                    <input type="date" name="Udob" class="form-control rounded-pill">
                                 </div>
                                 <div class="col-md-6 mb-2">
                                     <select class="form-control form-select rounded-pill"
-                                        aria-label="Default select example">
-                                        <option selected>select your Gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="others">Others</option>
+                                        aria-label="Default select example" name="Ugender">
+                                        <option name="" selected>select your Gender</option>
+                                        <option name="male" value="male">Male</option>
+                                        <option name="female" value="female">Female</option>
+                                        <option name="others" value="others">Others</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <input type="password" class="form-control rounded-pill" placeholder="Password"
+                                    <input type="password" class="form-control rounded-pill" name="Upass" placeholder="Password"
                                         required="required">
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <input type="password" class="form-control rounded-pill"
+                                    <input type="password" name="Ucnfpass" class="form-control rounded-pill"
                                         placeholder="confirm Password" required="required">
                                 </div>
 
                                 <div class="checkbox mb-3 mx-4">
                                     <label>
-                                        <input type="checkbox" value="remember-me"> Agree to our terms and conditions
+                                        <input type="checkbox" class="form-check-input" name="terms"> Agree to our terms and conditions
                                     </label>
                                 </div>
 
