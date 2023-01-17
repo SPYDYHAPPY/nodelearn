@@ -1,0 +1,20 @@
+[
+  {
+    "cart_id": "c7f72557-60cb-4819-b44c-964acef5795a",
+    "quantity": 3,
+    "cart_qn": 1,
+    "product_title": "Strawberry jelly",
+    "product_price": 14,
+    "cart_price": 42,
+    "purchaseTime": "16/1/2023 5:43:43 pm"
+  },
+  {
+    "cart_id": "1ca75902-b332-4b8e-9076-2d6cfaca4f3a",
+    "quantity": 2,
+    "cart_qn": 1,
+    "product_title": "Brown eggs",
+    "product_price": 28,
+    "cart_price": 56,
+    "purchaseTime": "16/1/2023 5:47:31 pm"
+  }
+]
