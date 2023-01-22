@@ -41,14 +41,6 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-package-lock.json
-special prices copy.hbs
-.vscode
-db_ext
-ProductsRouter_spec.js
-products_list copy.hbs
-app copy.js
-HomeRouter_spec.js
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
