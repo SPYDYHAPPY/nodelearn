@@ -1,5 +1,6 @@
 import { Sitetopnav, Sitefooter } from './Layouts/Sitelayout'
 import SpecialSale from './Components/SpecialPrice'
+import About from './Components/about'
 import './App.css'
 
 
