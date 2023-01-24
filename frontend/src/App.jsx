@@ -2,6 +2,7 @@ import "./App.css";
 import { Route, Routes, Link } from "react-router-dom";
 import SpecialSale from "./Components/SpecialPrice";
 import About from "./Components/about";
+import AuthLogin from "./Components/Login";
 
 function App() {
   return (
@@ -79,13 +80,13 @@ function App() {
                   0
                 </span>
               </a>
-              <a
+              <Link
+                to="/userauth"
                 className="btn btn-outline-dark rounded-pill mx-2"
-                href="/user-login"
                 title="login"
               >
                 <i className="bi-person"></i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -93,6 +94,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SpecialSale />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/userauth" element={<AuthLogin />} />
       </Routes>
       <footer className="footer mt-0 py-3 bg-light">
         <ul className="nav justify-content-center border-bottom pb-3 mb-3">
@@ -107,9 +109,9 @@ function App() {
             </a>
           </li>
           <li className="nav-item">
-            <a href="/user-login" className="nav-link px-2 text-muted">
+            <Link to="/userauth" className="nav-link px-2 text-muted">
               login
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <Link to="/about-us" className="nav-link px-2 text-muted">
