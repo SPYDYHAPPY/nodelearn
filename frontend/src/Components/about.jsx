@@ -1,13 +1,12 @@
 import React from "react";
 
-
 function About() {
 
     return (
         <>
            {/* ABOUT */}
             <section class="py-1 bg-light">
-                <div class="container px-4 px-lg-5 my-5">
+                <div class="container px-4 px-lg-5 my-4">
                     <div class="row gx-4 gx-lg-5 align-items-center">
                         <div class="col-md-4">
                             {/* <!-- Product image--> */}
