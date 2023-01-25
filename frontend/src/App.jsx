@@ -2,6 +2,9 @@ import "./App.css";
 import { Route, Routes, Link } from "react-router-dom";
 import SpecialSale from "./Components/SpecialPrice";
 import About from "./Components/about";
+import AuthUser from './Components/Authuser'
+import { NoMatch } from './Components/no-match'
+
 
 function App() {
   return (
@@ -93,6 +96,8 @@ function App() {
       <Routes>
         <Route path="/" element={<SpecialSale />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/userauth" element={<AuthUser />} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
       <footer className="footer mt-0 py-3 bg-light">
         <ul className="nav justify-content-center border-bottom pb-3 mb-3">

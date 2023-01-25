@@ -1,15 +1,16 @@
 import React from "react";
 import "./Login.css";
+import { Button, Col, Form, Row, Container } from 'react-bootstrap'
 
 function AuthUser() {
   return (
     <>
       <section className="py-1 mb-1 mt-lg-5">
-        <div className="container px-4 px-lg-5 my-3 overflow-hidden">
-          <div className="row">
-            <div className="col-md-12 py-5">
+        <Container className="px-4 px-lg-5 my-3 overflow-hidden">
+          <Row>
+            <Col md={8}>
               <h3 className="text-left">Happy Shop</h3>
-              <div className="d-flex overflow-hidden" style="height: 330px;">
+              <div className="d-flex overflow-hidden">
                 <p>
                   A grocery store is another form of retailing, primarily
                   focusing on selling food, along with non-food household
@@ -30,78 +31,75 @@ function AuthUser() {
                 </p>
                 <div className="vr mx-4"></div>
               </div>
-            </div>
-            <div className="col-md-4">
-              <h3>hello</h3>
-              <main className="form-signin">
-                <form action="#" method="post">
-                  <div className="text-center">
-                    <img
-                      className="mb-4"
-                      src="assets/user.svg"
-                      alt=""
-                      width="82"
-                      height="67"
-                    />
-                    <h1 className="h3 mb-3 fw-normal text-uppercase">
-                      Profile Login
-                    </h1>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-md-12 mb-3">
-                      <input
-                        type="text"
-                        name="Uname"
-                        className="form-control rounded-pill"
-                        placeholder="user name"
-                      />
-                    </div>
-
-                    <div className="col-md-12 mb-3">
-                      <input
-                        type="password"
-                        name="Upass"
-                        className="form-control rounded-pill"
-                        placeholder="Password"
-                      />
-                    </div>
-
-                    <div className="checkbox mb-3 mx-4">
-                      <label>
-                        <input type="checkbox" value="remember-me" /> Remember
-                        Me
-                      </label>
-                    </div>
-
-                    <div className="d-flex gap-2 justify-content-end">
-                      <button
-                        className="w-25 btn btn-outline-secondary rounded-pill"
-                        type="reset"
-                      >
-                        Reset
-                      </button>
-                      <button
-                        className="w-25 btn btn-outline-primary rounded-pill"
-                        type="submit"
-                      >
-                        Signin
-                      </button>
-                    </div>
-                  </div>
-                </form>
-                <div className="hstack gap-0 py-3">
-                  <a className="nav-link" href="/user-reset-pass">
-                    <i className="bi-person-fill-gear"></i>forgot password ?
-                  </a>
-                  <a className="nav-link" href="/user-reg">
-                    <i className="bi-person-fill-lock"></i>register here
-                  </a>
+            </Col>
+            <Col md={4}>
+              <Form>
+                <div className="text-center">
+                  <img
+                    className="mb-4"
+                    src="assets/user.svg"
+                    alt=""
+                    width="82"
+                    height="67"
+                  />
+                  <h1 className="h3 mb-3 fw-normal text-uppercase">
+                    Profile Login
+                  </h1>
                 </div>
-              </main>
-            </div>
-          </div>
-        </div>
+
+                <Row>
+                  <Col md={12} className="mb-3">
+                    <input
+                      type="text"
+                      name="Uname"
+                      className="form-control rounded-pill"
+                      placeholder="user name"
+                    />
+                  </Col>
+                  <Col md={12} className="mb-3">
+                    <input
+                      type="password"
+                      name="Upass"
+                      className="form-control rounded-pill"
+                      placeholder="Password"
+                    />
+                  </Col>
+                  <Form.Check className="mb-3 mx-4">
+                    <label>
+                      <input type="checkbox" value="remember-me" /> Remember
+                      Me
+                    </label>
+                  </Form.Check>
+                </Row>
+
+                <div className="d-flex gap-2 justify-content-end">
+                  <Button
+                    variant="outline-secondary"
+                    className="w-25 rounded-pill"
+                    type="reset"
+                  >
+                    Reset
+                  </Button>
+                  <Button
+                    variant="outline-primary"
+                    className="w-25 rounded-pill"
+                    type="submit"
+                  >
+                    Signin
+                  </Button>
+                </div>
+              </Form>
+              <div className="hstack gap-0 py-3">
+                <a className="nav-link" href="/user-reset-pass">
+                  <i className="bi-person-fill-gear"></i>forgot password ?
+                </a>
+                <a className="nav-link" href="/user-reg">
+                  <i className="bi-person-fill-lock"></i>register here
+                </a>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
     </>
   );
