@@ -3,7 +3,7 @@ import React from "react";
 function SpecialSale() {
   return (
     <>
-      <section className="py-1 bg-light">
+      <section className="py-1">
         <div className="container px-4 px-lg-5 my-4">
           <div className="row gx-4 gx-lg-5 align-items-center">
             <div className="col-md-4">
@@ -57,8 +57,8 @@ function SpecialSale() {
           </div>
         </div>
       </section>
-      </>
+    </>
   );
 }
 
-export default SpecialSale;
+export { SpecialSale }

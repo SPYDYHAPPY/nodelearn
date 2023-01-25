@@ -1,15 +1,14 @@
 import "./App.css";
 import { Route, Routes, Link } from "react-router-dom";
-import SpecialSale from "./Components/SpecialPrice";
-import About from "./Components/about";
-import AuthUser from './Components/Authuser'
-import { NoMatch } from './Components/no-match'
-
+import { SpecialSale } from "./Components/SpecialPrice";
+import { About } from "./Components/about";
+import { AuthUser } from "./Components/Authuser";
+import { NoMatch } from "./Components/no-match";
 
 function App() {
   return (
     <>
-      <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar sticky-top navbar-expand-lg navbar-light">
         <div className="container px-4 px-lg-10">
           <Link className="navbar-brand position-relative" to="/">
             {/* <img src="/nav-logo.png" height="100" width="100" alt="logo" className="position-absolute top-50 start-0 translate-middle" /> */}
@@ -99,7 +98,7 @@ function App() {
         <Route path="/userauth" element={<AuthUser />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
-      <footer className="footer mt-0 py-3 bg-light">
+      <footer className="footer mt-0 py-3">
         <ul className="nav justify-content-center border-bottom pb-3 mb-3">
           <li className="nav-item">
             <Link to="/" className="nav-link px-2 text-muted">
@@ -127,6 +126,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;
