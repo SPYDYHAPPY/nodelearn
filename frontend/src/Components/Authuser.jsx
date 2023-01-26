@@ -72,6 +72,7 @@ function AuthUser() {
                   <Button
                     variant="outline-secondary"
                     className="w-25 rounded-pill"
+                    size="sm"
                     type="reset"
                   >
                     Reset
@@ -79,6 +80,7 @@ function AuthUser() {
                   <Button
                     variant="outline-primary"
                     className="w-25 rounded-pill"
+                    size="sm"
                     type="submit"
                   >
                     Signin
@@ -86,10 +88,10 @@ function AuthUser() {
                 </div>
               </Form>
               <div className="hstack gap-0 py-3">
-                <a className="nav-link" href="/user-reset-pass">
+                <a className="nav-link" href="/forgot-user">
                   <i className="bi-person-fill-gear"></i>forgot password ?
                 </a>
-                <a className="nav-link" href="/user-reg">
+                <a className="nav-link" href="/register/user">
                   <i className="bi-person-fill-lock"></i>register here
                 </a>
               </div>

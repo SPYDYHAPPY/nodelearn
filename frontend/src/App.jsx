@@ -1,17 +1,20 @@
 import "./App.css";
+import BrandLogo from './assets/nav-logo.png';
 import { Route, Routes, Link } from "react-router-dom";
 import { SpecialSale } from "./Components/SpecialPrice";
 import { About } from "./Components/about";
 import { AuthUser } from "./Components/Authuser";
 import { NoMatch } from "./Components/no-match";
+import {Registeruser} from "./Components/Register";
+import {Forgotpassword} from "./Components/forgot";
 
 function App() {
   return (
     <>
-      <nav className="navbar sticky-top navbar-expand-lg navbar-light">
+      <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
         <div className="container px-4 px-lg-10">
           <Link className="navbar-brand position-relative" to="/">
-            {/* <img src="/nav-logo.png" height="100" width="100" alt="logo" className="position-absolute top-50 start-0 translate-middle" /> */}
+            <img src={BrandLogo} height="100" width="100" alt="logo" className="position-absolute top-50 start-0 translate-middle" />
           </Link>
 
           <button
@@ -96,6 +99,8 @@ function App() {
         <Route path="/" element={<SpecialSale />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/userauth" element={<AuthUser />} />
+        <Route path="/register/user" element={<Registeruser />} />
+        <Route path="/forgot-user" element={<Forgotpassword />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
       <footer className="footer mt-0 py-3">
