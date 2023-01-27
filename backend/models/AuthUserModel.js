@@ -34,11 +34,19 @@ const Authuser = myDb.define(
         phone: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
+            unique: {
+                args: true,
+                msg: 'phone number already in use'
+            },
             validate: {
-                isNumeric: true,
-                min: 10
-            }
+                isNumeric:
+                {
+                    args: true,
+                    msg: 'phone number should contain number only'
+                },
+                equals: 10,
+                min: 10,
+            },
         },
         Dob: {
             type: DataTypes.DATEONLY,
