@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import myDb from "../config/dbconfig";
+import myDb from "../config/dbconfig.js";
 
 const { DataTypes } = Sequelize;
 
@@ -7,72 +7,152 @@ const Cartitems = myDb.define(
     'Cartitems',
     {
         cid: {
-            type: DataTypes.STRING,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
             allowNull: false
         },
         uid: {
             type: DataTypes.STRING,
-            unique: true,
             allowNull: false,
-            references : {
-                model : 'User',
-                key: 'uid'
-            }
-        },
-        fullname: { 
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        email: { 
-            type: DataTypes.STRING,
-            allowNull: false ,
             validate: {
-                isEmail: true,
+                isUUID: {
+                    args: 4,
+                    msg: 'UUID must be valid user'
+                }
             }
         },
-        phone: { 
+        sid: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isNumeric: true,
+                isUUID: {
+                    args: 4,
+                    msg: 'UUID must be valid seller'
+                }
+            }
+        },
+        fullname: {
+            type: DataTypes.STRING,
+            validate: {
+                is: {
+                    args: ["^[a-zA-Z ]*$", 'i'],
+                    msg: 'Fullname must be contain letters only'
+                }
+            },
+            allowNull: false,
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isEmail: {
+                    args: true,
+                    msg: 'Please enter a valid email address'
+                },
+            },
+        },
+        phone: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isNumeric:
+                {
+                    args: true,
+                    msg: 'phone number should contain number only'
+                }
             }
         },
         address: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        pr_id: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isUUID: {
+                    args: 4,
+                    msg: 'UUID must be valid user'
+                }
+            }
+        },
         pr_title: {
             type: DataTypes.STRING,
+            validate: {
+                is: {
+                    args: /^[a-zA-Z\s]*$/,
+                    msg: 'Title must be contain letters only'
+                }
+            },
             allowNull: false,
         },
         pr_type: {
             type: DataTypes.STRING,
+            validate: {
+                is: {
+                    args: /^[a-zA-Z]*$/,
+                    msg: 'Type must be contain letters without any space'
+                }
+            },
+            allowNull: false,
+        },
+        pr_category: {
+            type: DataTypes.STRING,
+            validate: {
+                is: {
+                    args: /^[a-zA-Z]*$/,
+                    msg: 'Category must be contain letters without space'
+                }
+            },
             allowNull: false,
         },
         pr_price: {
-            type: DataTypes.STRING,
+            type: DataTypes.DECIMAL,
             allowNull: false,
             validate: {
-                isNumeric: true,
+                isDecimal: {
+                    args: true,
+                    msg: 'Price must be a decimal value'
+                },
+            },
+        },
+        quantity: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                isInt: {
+                    args: true,
+                    msg: 'Only Interger Value allowed'
+                }
             }
         },
-        createdAt: { 
-            type: DataTypes.DATEONLY,
-            allowNull: false 
+        cart_total: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                isDecimal: {
+                    args: true,
+                    msg: 'Total must be a decimal value'
+                },
+            },
         },
-        updatedAt: { 
-            type: DataTypes.DATEONLY,
-            allowNull: false 
+        on_confirm: {
+           type: DataTypes.BOOLEAN,
+           allowNull: false,
         },
-    }, 
+        createdAt: {
+            type: DataTypes.DATEONLY,
+            allowNull: false
+        },
+        updatedAt: {
+            type: DataTypes.DATEONLY,
+            allowNull: false
+        },
+    },
     {
         freezeTableName: true,
     }
 )
 
 export default Cartitems;
-
-async () => {
-    await myDb.sync();
-};

@@ -1,0 +1,13 @@
+## Get All Users List
+GET http://localhost:5000/users 
+
+
+###
+//Login Route
+POST http://localhost:5000/login
+content-type: application/json
+
+{
+    username: "Dbrahma4"
+    password: "12345"
+}

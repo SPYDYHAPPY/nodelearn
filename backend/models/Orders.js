@@ -75,6 +75,3 @@ const Orders = myDb.define(
 
 export default Orders;
 
-async () => {
-    await myDb.sync();
-};

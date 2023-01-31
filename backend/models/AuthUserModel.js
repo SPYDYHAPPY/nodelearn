@@ -76,6 +76,3 @@ const Authuser = myDb.define(
 
 export default Authuser;
 
-(async () => {
-    await myDb.sync();
-})();

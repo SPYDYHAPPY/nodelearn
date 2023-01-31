@@ -3,7 +3,8 @@ import myDb from "../config/dbconfig.js";
 
 const { DataTypes } = Sequelize;
 
-const SellerUser = myDb.define('Sellerlist',
+const SellerUser = myDb.define(
+    'Sellerlist',
     {
         id: {
             type: DataTypes.INTEGER.ZEROFILL,
@@ -104,6 +105,3 @@ const SellerUser = myDb.define('Sellerlist',
 
 export default SellerUser;
 
-(async () => {
-    await myDb.sync();
-})();

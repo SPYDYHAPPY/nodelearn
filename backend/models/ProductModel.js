@@ -4,7 +4,8 @@ import myDb from "../config/dbconfig.js";
 const { DataTypes } = Sequelize;
 
 
-const AllProducts = myDb.define('Allproducts',
+const AllProducts = myDb.define(
+    'Allproducts',
     {
         id: {
             type: DataTypes.INTEGER.ZEROFILL,
@@ -99,7 +100,3 @@ const AllProducts = myDb.define('Allproducts',
 );
 
 export default AllProducts;
-
-(async () => {
-    await myDb.sync();
-})();

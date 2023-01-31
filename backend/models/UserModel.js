@@ -100,6 +100,10 @@ const User = myDb.define(
             type: DataTypes.STRING,
             allowNull: false
         },
+        refresh_token:{
+            type: DataTypes.TEXT,
+            allowNull: true
+        },
         createdAt: {
             type: DataTypes.DATEONLY,
             allowNull: false
@@ -116,6 +120,4 @@ const User = myDb.define(
 
 export default User;
 
-(async () => {
-    await myDb.sync();
-})();
+

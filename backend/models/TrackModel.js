@@ -78,3 +78,5 @@ const Trackorder = myDb.define(
         freezeTableName: true,
     }
 )
+
+export default Trackorder
