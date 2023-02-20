@@ -4,19 +4,24 @@ import {
     getUserById,
     createUser,
     updateUser,
+    UpdateuserPass,
     deleteUser
 } from "../controllers/UserController.js";
 import { Loginauthentication, Logout } from "../controllers/UserauthController.js"
-import { verifyToken } from "../middleware/VerifyToken.js"
+//import { verifyToken } from "../middleware/VerifyToken.js"
 import { refreshToken } from "../controllers/RefreshToken.js";
 
 const router = express.Router();
 
-router.get('/users', verifyToken, getUsers);
-router.get('/users/:id', verifyToken, getUserById);
+router.get('/users',  getUsers); //verifyToken
+router.get('/users/:id', getUserById); //verifyToken
+router.patch('/users/:id', updateUser); //verifyToken
+router.patch('/user-pass/:id', UpdateuserPass); //verifyToken
+router.delete('/users/:id', deleteUser); //verifyToken
+
+//access token
 router.get('/token', refreshToken);
-router.patch('/users/:id', verifyToken, updateUser);
-router.delete('/users/:id', verifyToken, deleteUser);
+
 //other part
 router.post('/users', createUser);
 router.post('/login', Loginauthentication);

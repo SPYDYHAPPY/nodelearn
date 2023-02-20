@@ -9,5 +9,5 @@ const router = express.Router();
 router.post('/login', Loginauthentication);
 router.delete('/logout', Logout);
 
- 
+
 export default router;

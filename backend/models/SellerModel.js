@@ -6,34 +6,47 @@ const { DataTypes } = Sequelize;
 const SellerUser = myDb.define(
     'Sellerlist',
     {
-        id: {
-            type: DataTypes.INTEGER.ZEROFILL,
-            primaryKey: true,
-            autoIncrement: true,
-        },
         sid: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
-            unique: true,
+            primaryKey: true,
             allowNull: false,
         },
-        fullname: {
+        firstname: {
             type: DataTypes.STRING,
-            validate: {
-                is: {
-                    args: ["^[a-zA-Z ]*$", 'i'],
-                    msg: 'Fullname must be contain letters only'
-                }
-            },
             allowNull: false,
+            validate: {
+                isAlpha: {
+                    args: true,
+                    msg: 'firstname must contain letters'
+                },
+                len: {
+                    args: [3, 10],
+                    msg: 'firstname must contain letters between 3 and 10 characters'
+                }
+            }
+        },
+        lastname: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isAlpha: {
+                    args: true,
+                    msg: 'lastname must contain letters'
+                },
+                len: {
+                    args: [3, 10],
+                    msg: 'lastname must contain letters between 3 and 10 characters'
+                }
+            }
         },
         username: {
             type: DataTypes.STRING,
             validate: {
-                isAlphanumeric: {
+                is: {
                     //["^[a-zA-Z0-9]*$",'i']
-                    args: true,
-                    msg: 'Username must be contain letters and numbers without any space'
+                    args: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)” + “(?=.*[-+_!@#$%^&*., ?]).+$",
+                    msg: 'Username must be contain atleast one uppercase, one number and one special letter without any space'
                 }
             },
             unique: {
@@ -54,7 +67,7 @@ const SellerUser = myDb.define(
                 args: true,
                 msg: 'Email address already in use'
             },
-            allowNull: false
+            allowNull: false,
         },
         phone: {
             type: DataTypes.STRING,

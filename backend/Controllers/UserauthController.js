@@ -9,6 +9,9 @@ export const Loginauthentication = async (req, res) => {
                 username: req.body.userName
             }
         });
+        //check password
+        if (req.body.userPass === "" || req.body.userName === "") return res.status(401).json({ msg: "Blank fields not allowed" })
+
         //check user id
         if (!authuser[0]) return res.status(404).json({ msg: 'User id not found' })
 
@@ -16,16 +19,12 @@ export const Loginauthentication = async (req, res) => {
         const matchpass = await bcrypt.compare(req.body.userPass, authuser[0].password)
 
         // check password whether valid or not
-        if (!matchpass) return res.status(400).json({ msg: 'Invalid password' })
+        if (!matchpass) return res.status(400).json({ msg: 'password is not correct' })
 
         const userId = authuser[0].uid
-        const userFullname = authuser[0].fullname
+        const userFullname = authuser[0].firstname + ' ' + authuser[0].lastname
         const userUsername = authuser[0].username
-        // const userEmail = authuser[0].email
-        // const userPhone = authuser[0].phone
-        // const userDob = authuser[0].Dob
-        // const userGender = authuser[0].Gender
-        // const userAddress = authuser[0].address
+
 
         req.session.userId = authuser[0].uid;
 
@@ -45,7 +44,9 @@ export const Loginauthentication = async (req, res) => {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000
         });
-        res.status(200).json({ accessToken });
+        //res.status(200).json({ accessToken });
+
+        res.status(200).json({ msg: 'welcome back ' + userFullname.toLowerCase() });
     } catch (error) {
         //res.status(404).json({ msg: error.message });
         res.status(404).json({ msg: 'Something wrong.' })

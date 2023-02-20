@@ -10,3 +10,14 @@ export const verifyToken = (req, res, next) => {
         next();
     })
 }
+
+export const authToken = (req, res, next) => {
+    const authHeader = req.headers['authentication'];
+    const authtoken = authHeader && authHeader.split(' ')[1];
+    if (authtoken == null) return res.sendStatus(401);
+    jwt.verify(authtoken, process.env.AUTH_TOKEN_SECRET, (err, decoded) => {
+        if (err) return res.status(403).json({msg: 'Your login has expired.Login again'});
+        req.userName = decoded.userName;
+        next();
+    })
+}

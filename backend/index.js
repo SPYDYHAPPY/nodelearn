@@ -16,9 +16,8 @@ dotenv.config();
 const app = express();
 
 // const sessionStore = SequelizeStore(session.Store);
-
 // const store = new sessionStore({
-//     myDb: myDb
+//     db: myDb
 // });
 
 try {
@@ -28,9 +27,9 @@ try {
     console.error(error);
 }
 
-// (async () => {
-//     await myDb.sync();
-// })();
+//(async () => {
+//    await myDb.sync();
+//})();
 
 app.use(session({
     secret: process.env.SESS_SECRET,

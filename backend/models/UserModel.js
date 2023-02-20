@@ -3,8 +3,6 @@ import myDb from "../config/dbconfig.js";
 
 const { DataTypes } = Sequelize;
 
-let timestamp = new Date();
-
 
 const User = myDb.define(
     "userlist",
@@ -17,28 +15,50 @@ const User = myDb.define(
         uid: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
-            unique: {
-                args: true,
-                msg: 'Username is available in this id'
-            },
+            unique:  true,
             allowNull: false
         },
-        fullname: {
+        firstname: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                isAlpha: {
+                    args: true,
+                    msg: 'firstname must contain letters'
+                },
+                len: {
+                    args: [3, 10],
+                    msg: 'firstname must contain letters between 3 and 10 characters'
+                }
+            }
+        },
+        lastname: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isAlpha: {
+                    args: true,
+                    msg: 'Lastname must contain letters'
+                },
+                len: {
+                    args: [3, 10],
+                    msg: 'lastname must contain letters between 3 and 10 characters'
+                }
+            }
         },
         username: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isAlphanumeric: {
-                    args: true,
-                    msg: 'Username must contain alpha and numeric characters'
-                },
-            },
             unique: {
                 args: true,
                 msg: 'Username already in use'
+            },
+            validate: {
+                is: {
+                    ///(?=[A-Za-z0-9@#$%^&+!=]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+!=])(?=.{6,8}).*$/i,
+                    args: /(?=[A-Za-z0-9@#$%^&+!=]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+!=])(?=.{6,8}).*$/i,
+                    msg: 'Username must have upper or lower letters with numbers without any space between 6 to 8 characters'
+                }
             },
         },
         email: {
@@ -67,7 +87,11 @@ const User = myDb.define(
                 {
                     args: true,
                     msg: 'phone number should contain number only'
-                }
+                },
+                is: {
+                    args: /^\d{10}$/i,
+                    msg: 'phone number must be 10 digits'
+                },
             }
         },
         Dob: {
@@ -76,21 +100,29 @@ const User = myDb.define(
             validate: {
                 isDate: {
                     args: true,
-                    msg: 'Date must be valid'
+                    msg: 'Date must be valid date'
                 },
-                // isBefore: {
-                //     args: timestamp.setFullYear(timestamp.getFullYear() - 18),
-                //     msg: 'your age should be greater than 18 years'
-                // }
             }
         },
         Gender: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                isAlpha: {
+                    args: true,
+                    msg: 'Please enter your gender'
+                },
+            }
         },
         address: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                is: {
+                    args: /^[a-zA-Z0-9\s,'-]*$/i,
+                    msg: 'Address must be like eg. cape town, 69-B'
+                }
+            }
         },
         password: {
             type: DataTypes.STRING,
