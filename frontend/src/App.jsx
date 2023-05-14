@@ -56,12 +56,12 @@ function App() {
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#!">
+                    <a className="dropdown-item" href="/">
                       Popular Items
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/newarrival">
+                    <a className="dropdown-item" to="/newarrival">
                       New Arrivals
                     </a>
                   </li>
@@ -76,7 +76,7 @@ function App() {
             <div className="d-flex justify-content-center">
               <a
                 className="btn btn-outline-dark rounded-pill"
-                href="/cart"
+                to="/cart"
                 title="Cart"
               >
                 <i className="bi-cart-fill me-1"></i>Cart

@@ -7,7 +7,7 @@ function Sitetopnav() {
       <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
         <div className="container px-4 px-lg-10">
           <Link className="navbar-brand position-relative" to="/">
-            {/* <img src="/nav-logo.png" height="100" width="100" alt="logo" className="position-absolute top-50 start-0 translate-middle" /> */}
+            {/* <img src="/nav-logo.png" height="100" width="100" alt="logo" className="position-absolute top-50 start-0 translate-middle" /> */}0
           </Link>
 
           <button
