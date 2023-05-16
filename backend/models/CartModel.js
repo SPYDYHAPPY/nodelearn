@@ -6,24 +6,15 @@ const { DataTypes } = Sequelize;
 const Cartitems = myDb.define(
     'Cartitems',
     {
-        cid: {
+        cartId: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
             allowNull: false
         },
-        uid: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isUUID: {
-                    args: 4,
-                    msg: 'UUID must be valid user'
-                }
-            }
-        },
-        sid: {
-            type: DataTypes.STRING,
+        sellerId: {
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             allowNull: false,
             validate: {
                 isUUID: {
@@ -32,42 +23,7 @@ const Cartitems = myDb.define(
                 }
             }
         },
-        fullname: {
-            type: DataTypes.STRING,
-            validate: {
-                is: {
-                    args: ["^[a-zA-Z ]*$", 'i'],
-                    msg: 'Fullname must be contain letters only'
-                }
-            },
-            allowNull: false,
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isEmail: {
-                    args: true,
-                    msg: 'Please enter a valid email address'
-                },
-            },
-        },
-        phone: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isNumeric:
-                {
-                    args: true,
-                    msg: 'phone number should contain number only'
-                }
-            }
-        },
-        address: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        pr_id: {
+        productId: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {

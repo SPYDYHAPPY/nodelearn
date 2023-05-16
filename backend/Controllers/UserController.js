@@ -17,7 +17,8 @@ export const getUsers = async (req, res) => {
                 ['Gender', 'userGender'],
                 ['address', 'userAddress'],
                 ['terms', 'userTerms'],
-                'createdAt', 'updatedAt'
+                'userRole','createdAt', 
+                'updatedAt'
             ]
         });
         res.status(200).json(response);
@@ -60,12 +61,12 @@ export const createUser = async (req, res) => {
 
     const { firstName, lastName, userName, userEmail,
         userPhone, userDob, userGender, userAddress,
-        userPassword, userConfirmPassword, userTerms } = req.body;
+        userPassword, userConfirmPassword, userAccess, userTerms } = req.body;
 
     if (firstName === "" || lastName === "" || userName === "" ||
         userEmail === "" || userPhone === "" || userDob === "" ||
         userGender === "" || userAddress === "" || userPassword === "" ||
-        userConfirmPassword === "") {
+        userConfirmPassword === "" || userAccess === "" ) {
         return res.status(403).json({ msg: 'Blank fields are not allowed' })
     }
 
@@ -85,6 +86,7 @@ export const createUser = async (req, res) => {
                 Gender: userGender,
                 address: userAddress,
                 password: hashPassword,
+                userRole: userAccess,
                 terms: userTerms
             });
         res.status(201).json({ msg: "User Created" });
@@ -105,11 +107,11 @@ export const updateUser = async (req, res) => {
     //if (!req.session.userId) return res.status(401).json({ msg: 'Your login session has expired' })
     const { firstName, lastName, userName,
         userEmail, userPhone, userDob,
-        userGender, userAddress } = req.body;
+        userGender, userAddress, userAccess } = req.body;
 
     if (firstName === "" || lastName === "" || userName === "" ||
         userEmail === "" || userPhone === "" || userDob === "" ||
-        userGender === "" || userAddress === "") {
+        userGender === "" || userAddress === "" || userAccess === "") {
         return res.status(403).json({ msg: 'Blank fields not allowed' })
     }
 
@@ -135,6 +137,7 @@ export const updateUser = async (req, res) => {
             Dob: userDob,
             Gender: userGender,
             address: userAddress,
+            userRole: userAccess,
             // password: NewPassword,
         }, {
             where: {

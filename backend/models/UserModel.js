@@ -7,16 +7,14 @@ const { DataTypes } = Sequelize;
 const User = myDb.define(
     "userlist",
     {
-        id: {
-            type: DataTypes.INTEGER.ZEROFILL,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        uid: {
+        userId: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
-            unique:  true,
-            allowNull: false
+            unique: true,
+            allowNull: false,
+            validate:{
+                notEmpty: true
+            }
         },
         firstname: {
             type: DataTypes.STRING,
@@ -128,11 +126,15 @@ const User = myDb.define(
             type: DataTypes.STRING,
             allowNull: false
         },
+        userRole: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         terms: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        refresh_token:{
+        refresh_token: {
             type: DataTypes.TEXT,
             allowNull: true
         },

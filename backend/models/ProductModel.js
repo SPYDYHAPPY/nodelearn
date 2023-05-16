@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import myDb from "../config/dbconfig.js";
+import Myuser from '../models/UserModel.js';
 
 const { DataTypes } = Sequelize;
 
@@ -7,12 +8,7 @@ const { DataTypes } = Sequelize;
 const AllProducts = myDb.define(
     'Allproducts',
     {
-        id: {
-            type: DataTypes.INTEGER.ZEROFILL,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        pr_id: {
+        productId: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
             unique: {
@@ -21,7 +17,7 @@ const AllProducts = myDb.define(
             },
             allowNull: false
         },
-        pr_title: {
+        productTitle: {
             type: DataTypes.STRING,
             validate: {
                 is: {
@@ -31,7 +27,7 @@ const AllProducts = myDb.define(
             },
             allowNull: false,
         },
-        pr_type: {
+        productType: {
             type: DataTypes.STRING,
             validate: {
                 is: {
@@ -41,7 +37,7 @@ const AllProducts = myDb.define(
             },
             allowNull: false,
         },
-        pr_category: {
+        productCategory: {
             type: DataTypes.STRING,
             validate: {
                 is: {
@@ -51,7 +47,7 @@ const AllProducts = myDb.define(
             },
             allowNull: false,
         },
-        pr_description: {
+        productDescription: {
             type: DataTypes.STRING,
             validate: {
                 is: {
@@ -61,11 +57,11 @@ const AllProducts = myDb.define(
             },
             allowNull: false,
         },
-        pr_filename: {
+        productImagefile: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        pr_price: {
+        productPrice: {
             type: DataTypes.DECIMAL,
             validate: {
                 isDecimal: {
@@ -75,7 +71,7 @@ const AllProducts = myDb.define(
             },
             allowNull: false,
         },
-        pr_rating: {
+        productRating: {
             type: DataTypes.DECIMAL,
             validate: {
                 isDecimal: {
@@ -84,6 +80,14 @@ const AllProducts = myDb.define(
                 },
             },
             allowNull: false,
+        },
+        userID: {
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+            allowNull: false,
+            validate:{
+                notEmpty: true
+            }
         },
         createdAt: {
             type: DataTypes.DATEONLY,
@@ -98,5 +102,9 @@ const AllProducts = myDb.define(
         freezeTableName: true,
     }
 );
+
+Myuser.hasMany(AllProducts);
+AllProducts.belongsTo(Myuser, {foreignKey: 'userID'});
+    
 
 export default AllProducts;
