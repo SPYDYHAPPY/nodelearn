@@ -3,9 +3,11 @@ import BrandLogo from './assets/nav-logo.png';
 import { Route, Routes, Link } from "react-router-dom";
 import { SpecialSale } from "./Components/SpecialPrice";
 import { About } from "./Components/about";
+import { Shopcart } from "./Components/cart";
 import { AuthUser } from "./Components/Authuser";
 import { NoMatch } from "./Components/no-match";
 import {Registeruser} from "./Components/Register";
+import {AllProducts} from "./Components/allproducts";
 import {Forgotpassword} from "./Components/forgot";
 
 function App() {
@@ -48,9 +50,9 @@ function App() {
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="/all-products">
+                    <Link className="dropdown-item" to="/allproducts">
                       All Products
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
@@ -74,16 +76,15 @@ function App() {
               </li>
             </ul>
             <div className="d-flex justify-content-center">
-              <a
+              <Link
                 className="btn btn-outline-dark rounded-pill"
-                to="/cart"
-                title="Cart"
+                to="/mycart"
               >
                 <i className="bi-cart-fill me-1"></i>Cart
                 <span className="badge bg-dark text-white ms-1 rounded-pill">
                   0
                 </span>
-              </a>
+              </Link>
               <Link
                 to="/userauth"
                 className="btn btn-outline-dark rounded-pill mx-2"
@@ -101,7 +102,10 @@ function App() {
         <Route path="/userauth" element={<AuthUser />} />
         <Route path="/register/user" element={<Registeruser />} />
         <Route path="/forgot-user" element={<Forgotpassword />} />
+        <Route path="/mycart" element={<Shopcart />} />
+        <Route path="/allproducts" element={<AllProducts />} />
         <Route path="*" element={<NoMatch />} />
+
       </Routes>
       <footer className="footer mt-0 py-3">
         <ul className="nav justify-content-center border-bottom pb-3 mb-3">

@@ -1,18 +1,21 @@
-import { Sitefooter, Sitefooter } from "./Layouts/Sitelayout";
+// import { Sitefooter, Sitefooter } from "./Layouts/Sitelayout";
 import React from "react";
 
 function AllProducts() {
   return (
     <>
       {/* SITE TOPNAV */}
-      <Sitetopnav />
+      {/* <Sitetopnav /> */}
 
       <section class="py-2 bg-light">
         <div class="container px-4 px-lg-5 mt-5">
+
           <div class="row gx-4 gx-lg-5">
             <div class="col-9">
-              <h2 class="fw-bolder mb-4">Related products</h2>
+              <h2 class="fw-bolder mb-4">ALL PRODUCTS</h2>
             </div>
+
+            {/* SEARCH SECTION */}
             <div class="col-3">
               <form class="d-flex" role="search">
                 <input
@@ -27,52 +30,100 @@ function AllProducts() {
               </form>
             </div>
           </div>
-          <div class="row gx-4 gx-lg-3 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            {/* {{#list products}} */}
-            <div class="col mb-3">
+
+          <div class="row gx-4 gx-lg-3 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center p-2">
+
+            <div class="col-sm-4 mb-3">
+              {/* CARD-1 */}
               <div class="card h-100 shadow">
-                {/* Sale badge */}
                 <span
-                  class="badge rounded-pill bg-primary text-white position-absolute"
-                  style="top: 0.5rem; right: 0.4rem"
-                >
-                  {{ type }}
+                  class="badge rounded-pill bg-primary text-white position-absolute">
+                  Leather
                 </span>
                 <span
-                  class="badge rounded-pill bg-warning text-dark position-absolute"
-                  style="top: 0.5rem; left: 0.2rem"
-                >
-                  {{ category }}
+                  class="badge rounded-pill bg-warning text-dark position-absolute">
+                  Footwear
                 </span>
-                {/* Product image */}
-                {/* <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> */}
-                <img
-                  class="card-img-top"
-                  src="assets/images/{{ filename }}"
-                  height="300"
-                  width="450"
-                  alt="..."
-                />
-                {/* Product details */}
+
+                <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+
+
                 <div class="card-body p-4">
                   <div class="text-center">
-                    {/* Product name */}
-                    <h5 class="fw-bolder">{{ title }}</h5>
-                    {/* Product reviews */}
+
+                    <h5 class="fw-bolder">Shoe</h5>
+
                     <div class="d-flex justify-content-center small text-warning mb-2">
                       <div class="card-text me-2 text-primary">
-                        Rating : {{ rating }}.0
+                        Rating : 4.0
                       </div>
                     </div>
-                    {/* Product price */}
+
                     <span class="text-muted text-decoration-line-through">
-                      ₹38.00
+                      ₹2338.00
                     </span>
-                    ₹{{ price }}
+                    ₹1299
                   </div>
-                  <div class="card-text text-left">{{ description }}</div>
+                  <div class="card-text text-left">Awesome Product</div>
                 </div>
-                {/* Product actions */}
+
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center">
+
+                    <a
+                      class="btn btn-outline-dark mt-auto rounded-pill"
+                      href="/product/{{ id }}"
+                    >
+                      view
+                    </a>
+                   
+                    <a
+                      class="btn btn-outline-dark mt-auto rounded-pill mx-1"
+                      href="/product/{{ id }}"
+                    >
+                      Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-4 mb-3">
+              {/* CARD-2 */}
+              <div class="card h-100 shadow">
+
+                <span
+                  class="badge rounded-pill bg-primary text-white position-absolute">
+                  Leather
+                </span>
+                <span
+                  class="badge rounded-pill bg-warning text-dark position-absolute">
+                  Footwear
+                </span>
+
+                <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+
+
+                <div class="card-body p-4">
+                  <div class="text-center">
+
+                    <h5 class="fw-bolder">Shoe</h5>
+
+                    <div class="d-flex justify-content-center small text-warning mb-2">
+                      <div class="card-text me-2 text-primary">
+                        Rating : 4.0
+                      </div>
+                    </div>
+
+                    <span class="text-muted text-decoration-line-through">
+                      ₹2338.00
+                    </span>
+                    ₹1299
+                  </div>
+                  <div class="card-text text-left">Awesome Product</div>
+                </div>
+
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                   <div class="text-center">
                     <a
@@ -82,7 +133,7 @@ function AllProducts() {
                       view
                     </a>
                     <a
-                      class="btn btn-outline-dark mt-auto rounded-pill"
+                      class="btn btn-outline-dark mt-auto rounded-pill mx-1"
                       href="/product/{{ id }}"
                     >
                       Add to cart
@@ -91,12 +142,127 @@ function AllProducts() {
                 </div>
               </div>
             </div>
-            {/* {{/list}} */}
+
+
+            <div class="col-sm-4 mb-3">
+              {/* CARD-3 */}
+              <div class="card h-100 shadow">
+
+                <span
+                  class="badge rounded-pill bg-primary text-white position-absolute">
+                  Leather
+                </span>
+                <span
+                  class="badge rounded-pill bg-warning text-dark position-absolute">
+                  Footwear
+                </span>
+
+                <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+
+
+                <div class="card-body p-4">
+                  <div class="text-center">
+
+                    <h5 class="fw-bolder">Shoe</h5>
+
+                    <div class="d-flex justify-content-center small text-warning mb-2">
+                      <div class="card-text me-2 text-primary">
+                        Rating : 4.0
+                      </div>
+                    </div>
+
+                    <span class="text-muted text-decoration-line-through">
+                      ₹2338.00
+                    </span>
+                    ₹1299
+                  </div>
+                  <div class="card-text text-left">Awesome Product</div>
+                </div>
+
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center">
+                    <a
+                      class="btn btn-outline-dark mt-auto rounded-pill"
+                      href="/product/{{ id }}"
+                    >
+                      view
+                    </a>
+                    <a
+                      class="btn btn-outline-dark mt-auto rounded-pill mx-1"
+                      href="/product/{{ id }}"
+                    >
+                      Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-4 mb-3">
+              {/* CARD-4 */}
+              <div class="card h-100 shadow">
+
+                <span
+                  class="badge rounded-pill bg-primary text-white position-absolute">
+                  Leather
+                </span>
+                <span
+                  class="badge rounded-pill bg-warning text-dark position-absolute">
+                  Footwear
+                </span>
+
+                <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+
+
+                <div class="card-body p-4">
+                  <div class="text-center">
+
+                    <h5 class="fw-bolder">Shoe</h5>
+
+                    <div class="d-flex justify-content-center small text-warning mb-2">
+                      <div class="card-text me-2 text-primary">
+                        Rating : 4.0
+                      </div>
+                    </div>
+
+                    <span class="text-muted text-decoration-line-through">
+                      ₹2338.00
+                    </span>
+                    ₹1299
+                  </div>
+                  <div class="card-text text-left">Awesome Product</div>
+                </div>
+
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center">
+                    <a
+                      class="btn btn-outline-dark mt-auto rounded-pill"
+                      href="/product/{{ id }}"
+                    >
+                      view
+                    </a>
+                    <a
+                      class="btn btn-outline-dark mt-auto rounded-pill mx-1"
+                      href="/product/{{ id }}"
+                    >
+                      Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
+
         </div>
-      </section>
+      </section >
+
+
+
       {/* SITE FOOTER */}
-      <Sitefooter />
+      {/* <Sitefooter /> */}
     </>
   );
 }
