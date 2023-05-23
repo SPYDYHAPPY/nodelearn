@@ -14,13 +14,13 @@ function SpecialSale() {
               />
             </div>
             <div className="col-md-8">
-              <sub className="small mb-1 badge bg-primary text-capitalize">
+              <sub className="small my-1 badge bg-primary text-capitalize">
                 Rating: 4.0
               </sub>
-              <sub className="small mb-1 badge bg-info text-uppercase">
+              <sub className="small mx-1 badge bg-info text-uppercase">
                 hair wash
               </sub>
-              <sub className="small mb-1 badge bg-secondary text-uppercase">
+              <sub className="small mx-1 badge bg-secondary text-uppercase">
                 today sale
               </sub>
               <h1 className="display-5 fw-bolder">Sampoo</h1>
