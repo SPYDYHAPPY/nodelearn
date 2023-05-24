@@ -15,9 +15,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-(async () => {
-    await myDb.sync();
-})();
+// (async () => {
+//     await myDb.sync();
+// })();
 
 app.use(cors());
 
