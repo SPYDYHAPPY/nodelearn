@@ -7,7 +7,7 @@ import { Shopcart } from "./Components/cart";
 import { AuthUser } from "./Components/Authuser";
 import { NoMatch } from "./Components/no-match";
 import {Registeruser} from "./Components/Register";
-import {AllProducts} from "./Components/allproducts";
+import {AllProducts, Popularitems, NewItems} from "./Components/allproducts";
 import {Forgotpassword} from "./Components/forgot";
 
 function App() {
@@ -58,14 +58,14 @@ function App() {
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <Link className="dropdown-item" to="/popular">
                       Popular Items
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" to="/newarrival">
+                    <Link className="dropdown-item" to="/newitems">
                       New Arrivals
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -104,6 +104,8 @@ function App() {
         <Route path="/forgot-user" element={<Forgotpassword />} />
         <Route path="/mycart" element={<Shopcart />} />
         <Route path="/allproducts" element={<AllProducts />} />
+        <Route path="/popular" element={<Popularitems />} />
+        <Route path="/newitems" element={<NewItems />} />
         <Route path="*" element={<NoMatch />} />
 
       </Routes>
