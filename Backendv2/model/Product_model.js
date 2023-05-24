@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize";
+import { Sequelize} from "sequelize";
 import myDb from "../db/dbconfig.js";
 
 const { DataTypes } = Sequelize;
@@ -7,7 +7,7 @@ const AllProducts = myDb.define(
   "storeproducts",
   {
     id: {
-      type: DataTypes.BIGINT.ZEROFILL,
+      type: DataTypes.INTEGER.ZEROFILL,
       primaryKey: true,
       autoIncrement: true,
     },

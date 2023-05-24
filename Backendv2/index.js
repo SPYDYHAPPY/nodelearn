@@ -1,6 +1,7 @@
 import express from "express";
 import ListOfProducts from "./routes/ProductsRoute.js";
 import myDb from "./db/dbconfig.js"
+import cors from "cors"
 
 try {
   await myDb.authenticate();
@@ -17,6 +18,8 @@ app.use(express.urlencoded({ extended: false }));
 (async () => {
     await myDb.sync();
 })();
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
