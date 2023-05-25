@@ -131,8 +131,8 @@ function Registeruser() {
                                 </div>
                             </Form>
                             <div className="hstack gap-0 py-3">
-                                <a className="nav-link" href="/userauth">
-                                    <i className="bi-person-fill-lock"></i>Login Here
+                                <a className="nav-link" href="/Userlogin">
+                                <i class="bi bi-file-lock"></i>Login Here
                                 </a>
                             </div>
                         </Col>

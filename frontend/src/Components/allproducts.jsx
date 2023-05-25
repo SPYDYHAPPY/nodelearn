@@ -9,10 +9,11 @@ export const AllProducts = () => {
     getProducts();
   }, []);
 
+  const fetchProducts = products.length;
+
   const getProducts = async () => {
     try {
       const response = await axios.get("http://localhost:3000/products");
-      //const data = await response.json();
       setProducts(response.data);
     } catch (error) {
       console.error("Error fetching product data:", error);
@@ -46,283 +47,277 @@ export const AllProducts = () => {
 
           <div className="row gx-4 gx-lg-3 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center p-2">
             {/* CARD-1 */}
-            {products.map((product) => (
-              <div class="col-sm-4 mb-3">
-                <div class="card h-100 shadow">
-                  <div className="row gx-1">
-                    <div className="col">
-                      <span class="badge rounded-pill bg-primary text-white position-absolute m-2">
-                        {product.category}
-                      </span>
+            {products.map((product) => {
+              return (
+                <div class="col-sm-4 mb-3">
+                  <div class="card h-100 shadow">
+                    <div className="row gx-1">
+                      <div className="col">
+                        <span class="badge rounded-pill bg-primary text-white position-absolute m-2">
+                          {product.category}
+                        </span>
+                      </div>
+                      <div className="col">
+                        <span class="badge rounded-pill bg-warning text-dark position-absolute m-2">
+                          {product.type}
+                        </span>
+                      </div>
                     </div>
-                    <div className="col">
-                      <span class="badge rounded-pill bg-warning text-dark position-absolute m-2">
-                        {product.type}
-                      </span>
+
+                    <img
+                      class="card-img-top"
+                      src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                      alt="..."
+                    />
+
+                    <div class="card-body p-4">
+                      <div class="text-center">
+                        <h5 class="fw-bolder">{product.title}</h5>
+                        <div class="d-flex justify-content-center small text-warning mb-2">
+                          <div class="card-text me-2 text-primary">
+                            Rating: {product.rating}
+                          </div>
+                        </div>
+                        <span class="text-muted text-decoration-line-through">
+                          ₹{product.price}
+                        </span>
+                        ₹1299
+                      </div>
+                      <div class="card-text text-left">
+                        {product.description}
+                      </div>
+                    </div>
+
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      <div class="text-center">
+                        <Link
+                          class="btn btn-outline-dark mt-auto rounded-pill"
+                          to="#"
+                        >
+                          view
+                        </Link>
+
+                        <Link
+                          class="btn btn-outline-dark mt-auto rounded-pill mx-1"
+                          to="#"
+                        >
+                          Add to cart
+                        </Link>
+                      </div>
                     </div>
                   </div>
+                </div>
+              );
+            })}
 
-                  <img
-                    class="card-img-top"
-                    src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                    alt="..."
-                  />
+            {/** <div className="col-sm-4 mb-3">
+                    <div className="card h-100 shadow">
+                      <span className="badge rounded-pill bg-primary text-white position-absolute">
+                        Leather
+                      </span>
+                      <span className="badge rounded-pill bg-warning text-dark position-absolute">
+                        Footwear
+                      </span>
 
-                  <div class="card-body p-4">
-                    <div class="text-center">
-                      <h5 class="fw-bolder">{product.title}</h5>
-                      <div class="d-flex justify-content-center small text-warning mb-2">
-                        <div class="card-text me-2 text-primary">
-                          Rating: {product.rating}
+                      <img
+                        className="card-img-top"
+                        src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                        alt="..."
+                      />
+
+                      <div className="card-body p-4">
+                        <div className="text-center">
+                          <h5 className="fw-bolder">Shoe</h5>
+                          <div className="d-flex justify-content-center small text-warning mb-2">
+                            <div className="card-text me-2 text-primary">
+                              Rating : 4.0
+                            </div>
+                          </div>
+                          <span className="text-muted text-decoration-line-through">
+                            ₹2338.00
+                          </span>
+                          ₹1299
+                        </div>
+                        <div className="card-text text-left">
+                          Awesome Product
                         </div>
                       </div>
-                      <span class="text-muted text-decoration-line-through">
-                        ₹{product.price}
+
+                      <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div className="text-center">
+                          <a
+                            className="btn btn-outline-dark mt-auto rounded-pill"
+                            href="/product/{{ id }}"
+                          >
+                            view
+                          </a>
+
+                          <a
+                            className="btn btn-outline-dark mt-auto rounded-pill mx-1"
+                            href="/product/{{ id }}"
+                          >
+                            Add to cart
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-sm-4 mb-3">
+                    <div className="card h-100 shadow">
+                      <span className="badge rounded-pill bg-primary text-white position-absolute">
+                        Leather
                       </span>
-                      ₹1299
-                    </div>
-                    <div class="card-text text-left">{product.description}</div>
-                  </div>
+                      <span className="badge rounded-pill bg-warning text-dark position-absolute">
+                        Footwear
+                      </span>
 
-                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div class="text-center">
-                      <Link
-                        class="btn btn-outline-dark mt-auto rounded-pill"
-                        to="#"
-                      >
-                        view
-                      </Link>
+                      <img
+                        className="card-img-top"
+                        src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                        alt="..."
+                      />
 
-                      <Link
-                        class="btn btn-outline-dark mt-auto rounded-pill mx-1"
-                        to="#"
-                      >
-                        Add to cart
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+                      <div className="card-body p-4">
+                        <div className="text-center">
+                          <h5 className="fw-bolder">Shoe</h5>
+                          <div className="d-flex justify-content-center small text-warning mb-2">
+                            <div className="card-text me-2 text-primary">
+                              Rating : 4.0
+                            </div>
+                          </div>
+                          <span className="text-muted text-decoration-line-through">
+                            ₹2338.00
+                          </span>
+                          ₹1299
+                        </div>
+                        <div className="card-text text-left">
+                          Awesome Product
+                        </div>
+                      </div>
 
-            {/*
-            <div className="col-sm-4 mb-3">
-               CARD-1 
-              <div className="card h-100 shadow">
-                <span
-                  className="badge rounded-pill bg-primary text-white position-absolute">
-                  Leather
-                </span>
-                <span
-                  className="badge rounded-pill bg-warning text-dark position-absolute">
-                  Footwear
-                </span>
-
-                <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-
-
-                <div className="card-body p-4">
-                  <div className="text-center">
-
-                    <h5 className="fw-bolder">Shoe</h5>
-
-                    <div className="d-flex justify-content-center small text-warning mb-2">
-                      <div className="card-text me-2 text-primary">
-                        Rating : 4.0
+                      <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div className="text-center">
+                          <a
+                            className="btn btn-outline-dark mt-auto rounded-pill"
+                            href="/product/{{ id }}"
+                          >
+                            view
+                          </a>
+                          <a
+                            className="btn btn-outline-dark mt-auto rounded-pill mx-1"
+                            href="/product/{{ id }}"
+                          >
+                            Add to cart
+                          </a>
+                        </div>
                       </div>
                     </div>
-
-                    <span className="text-muted text-decoration-line-through">
-                      ₹2338.00
-                    </span>
-                    ₹1299
                   </div>
-                  <div className="card-text text-left">Awesome Product</div>
-                </div>
 
-                <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center">
+                  <div className="col-sm-4 mb-3">
+                    <div className="card h-100 shadow">
+                      <span className="badge rounded-pill bg-primary text-white position-absolute">
+                        Leather
+                      </span>
+                      <span className="badge rounded-pill bg-warning text-dark position-absolute">
+                        Footwear
+                      </span>
 
-                    <a
-                      className="btn btn-outline-dark mt-auto rounded-pill"
-                      href="/product/{{ id }}"
-                    >
-                      view
-                    </a>
-                   
-                    <a
-                      className="btn btn-outline-dark mt-auto rounded-pill mx-1"
-                      href="/product/{{ id }}"
-                    >
-                      Add to cart
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-                  */}
+                      <img
+                        className="card-img-top"
+                        src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                        alt="..."
+                      />
 
-            {/* <div className="col-sm-4 mb-3">
-               CARD-2 
-              <div className="card h-100 shadow">
+                      <div className="card-body p-4">
+                        <div className="text-center">
+                          <h5 className="fw-bolder">Shoe</h5>
+                          <div className="d-flex justify-content-center small text-warning mb-2">
+                            <div className="card-text me-2 text-primary">
+                              Rating : 4.0
+                            </div>
+                          </div>
+                          <span className="text-muted text-decoration-line-through">
+                            ₹2338.00
+                          </span>
+                          ₹1299
+                        </div>
+                        <div className="card-text text-left">
+                          Awesome Product
+                        </div>
+                      </div>
 
-                <span
-                  className="badge rounded-pill bg-primary text-white position-absolute">
-                  Leather
-                </span>
-                <span
-                  className="badge rounded-pill bg-warning text-dark position-absolute">
-                  Footwear
-                </span>
-
-                <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-
-
-                <div className="card-body p-4">
-                  <div className="text-center">
-
-                    <h5 className="fw-bolder">Shoe</h5>
-
-                    <div className="d-flex justify-content-center small text-warning mb-2">
-                      <div className="card-text me-2 text-primary">
-                        Rating : 4.0
+                      <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div className="text-center">
+                          <a
+                            className="btn btn-outline-dark mt-auto rounded-pill"
+                            href="/product/{{ id }}"
+                          >
+                            view
+                          </a>
+                          <a
+                            className="btn btn-outline-dark mt-auto rounded-pill mx-1"
+                            href="/product/{{ id }}"
+                          >
+                            Add to cart
+                          </a>
+                        </div>
                       </div>
                     </div>
-
-                    <span className="text-muted text-decoration-line-through">
-                      ₹2338.00
-                    </span>
-                    ₹1299
                   </div>
-                  <div className="card-text text-left">Awesome Product</div>
-                </div>
 
-                <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center">
-                    <a
-                      className="btn btn-outline-dark mt-auto rounded-pill"
-                      href="/product/{{ id }}"
-                    >
-                      view
-                    </a>
-                    <a
-                      className="btn btn-outline-dark mt-auto rounded-pill mx-1"
-                      href="/product/{{ id }}"
-                    >
-                      Add to cart
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>*/}
+                  <div className="col-sm-4 mb-3">
+                    <div className="card h-100 shadow">
+                      <span className="badge rounded-pill bg-primary text-white position-absolute">
+                        Leather
+                      </span>
+                      <span className="badge rounded-pill bg-warning text-dark position-absolute">
+                        Footwear
+                      </span>
 
-            {/* <div className="col-sm-4 mb-3">
-               CARD-3
-              <div className="card h-100 shadow">
+                      <img
+                        className="card-img-top"
+                        src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                        alt="..."
+                      />
 
-                <span
-                  className="badge rounded-pill bg-primary text-white position-absolute">
-                  Leather
-                </span>
-                <span
-                  className="badge rounded-pill bg-warning text-dark position-absolute">
-                  Footwear
-                </span>
+                      <div className="card-body p-4">
+                        <div className="text-center">
+                          <h5 className="fw-bolder">Shoe</h5>
+                          <div className="d-flex justify-content-center small text-warning mb-2">
+                            <div className="card-text me-2 text-primary">
+                              Rating : 4.0
+                            </div>
+                          </div>
+                          <span className="text-muted text-decoration-line-through">
+                            ₹2338.00
+                          </span>
+                          ₹1299
+                        </div>
+                        <div className="card-text text-left">
+                          Awesome Product
+                        </div>
+                      </div>
 
-                <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-
-
-                <div className="card-body p-4">
-                  <div className="text-center">
-
-                    <h5 className="fw-bolder">Shoe</h5>
-
-                    <div className="d-flex justify-content-center small text-warning mb-2">
-                      <div className="card-text me-2 text-primary">
-                        Rating : 4.0
+                      <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div className="text-center">
+                          <a
+                            className="btn btn-outline-dark mt-auto rounded-pill"
+                            href="/product/{{ id }}"
+                          >
+                            view
+                          </a>
+                          <a
+                            className="btn btn-outline-dark mt-auto rounded-pill mx-1"
+                            href="/product/{{ id }}"
+                          >
+                            Add to cart
+                          </a>
+                        </div>
                       </div>
                     </div>
-
-                    <span className="text-muted text-decoration-line-through">
-                      ₹2338.00
-                    </span>
-                    ₹1299
-                  </div>
-                  <div className="card-text text-left">Awesome Product</div>
-                </div>
-
-                <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center">
-                    <a
-                      className="btn btn-outline-dark mt-auto rounded-pill"
-                      href="/product/{{ id }}"
-                    >
-                      view
-                    </a>
-                    <a
-                      className="btn btn-outline-dark mt-auto rounded-pill mx-1"
-                      href="/product/{{ id }}"
-                    >
-                      Add to cart
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-
-            {/* <div className="col-sm-4 mb-3">
-               CARD-4 
-              <div className="card h-100 shadow">
-
-                <span
-                  className="badge rounded-pill bg-primary text-white position-absolute">
-                  Leather
-                </span>
-                <span
-                  className="badge rounded-pill bg-warning text-dark position-absolute">
-                  Footwear
-                </span>
-
-                <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-
-
-                <div className="card-body p-4">
-                  <div className="text-center">
-
-                    <h5 className="fw-bolder">Shoe</h5>
-
-                    <div className="d-flex justify-content-center small text-warning mb-2">
-                      <div className="card-text me-2 text-primary">
-                        Rating : 4.0
-                      </div>
-                    </div>
-
-                    <span className="text-muted text-decoration-line-through">
-                      ₹2338.00
-                    </span>
-                    ₹1299
-                  </div>
-                  <div className="card-text text-left">Awesome Product</div>
-                </div>
-
-                <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center">
-                    <a
-                      className="btn btn-outline-dark mt-auto rounded-pill"
-                      href="/product/{{ id }}"
-                    >
-                      view
-                    </a>
-                    <a
-                      className="btn btn-outline-dark mt-auto rounded-pill mx-1"
-                      href="/product/{{ id }}"
-                    >
-                      Add to cart
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>*/}
+                  </div> */}
           </div>
         </div>
       </section>

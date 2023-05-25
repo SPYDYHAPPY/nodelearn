@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css";
 import { Button, Col, Form, Row, Container } from "react-bootstrap";
-import logos from '../assets/user.svg'
+import logos from "../assets/user.svg";
 
 function AuthUser() {
   return (
@@ -65,7 +65,11 @@ function AuthUser() {
                       placeholder="Password"
                     />
                   </Col>
-                  <Form.Check className="mb-3 mx-4" type="checkbox" label="Remember Me" />
+                  <Form.Check
+                    className="mb-3 mx-4"
+                    type="checkbox"
+                    label="Remember Me"
+                  />
                 </Row>
 
                 <div className="d-flex gap-2 justify-content-end">
@@ -89,10 +93,10 @@ function AuthUser() {
               </Form>
               <div className="hstack gap-0 py-3">
                 <a className="nav-link" href="/forgot-user">
-                  <i className="bi-person-fill-gear"></i>forgot password ?
+                  <i class="bi bi-unlock"></i>forgot password ?
                 </a>
-                <a className="nav-link" href="/register/user">
-                  <i className="bi-person-fill-lock"></i>register here
+                <a className="nav-link" href="/newuser">
+                  <i class="bi bi-person"></i>register here
                 </a>
               </div>
             </Col>
@@ -103,4 +107,4 @@ function AuthUser() {
   );
 }
 
-export { AuthUser }
+export { AuthUser };

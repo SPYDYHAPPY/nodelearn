@@ -1,14 +1,14 @@
 import "./App.css";
-import BrandLogo from './assets/nav-logo.png';
+import BrandLogo from "./assets/nav-logo.png";
 import { Route, Routes, Link } from "react-router-dom";
 import { SpecialSale } from "./Components/SpecialPrice";
 import { About } from "./Components/about";
 import { Shopcart } from "./Components/cart";
 import { AuthUser } from "./Components/Authuser";
 import { NoMatch } from "./Components/no-match";
-import {Registeruser} from "./Components/Register";
-import {AllProducts, Popularitems, NewItems} from "./Components/allproducts";
-import {Forgotpassword} from "./Components/forgot";
+import { Registeruser } from "./Components/Register";
+import { AllProducts, Popularitems, NewItems } from "./Components/allproducts";
+import { Forgotpassword } from "./Components/forgot";
 
 function App() {
   return (
@@ -16,7 +16,13 @@ function App() {
       <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
         <div className="container px-4 px-lg-10">
           <Link className="navbar-brand position-relative" to="/">
-            <img src={BrandLogo} height="100" width="100" alt="logo" className="position-absolute top-50 start-0 translate-middle" />
+            <img
+              src={BrandLogo}
+              height="100"
+              width="100"
+              alt="logo"
+              className="position-absolute top-50 start-0 translate-middle"
+            />
           </Link>
 
           <button
@@ -76,21 +82,18 @@ function App() {
               </li>
             </ul>
             <div className="d-flex justify-content-center">
-              <Link
-                className="btn btn-outline-dark rounded-pill"
-                to="/mycart"
-              >
+              <Link className="btn btn-outline-dark rounded-pill" to="/mycart">
                 <i className="bi-cart-fill me-1"></i>Cart
                 <span className="badge bg-dark text-white ms-1 rounded-pill">
                   0
                 </span>
               </Link>
               <Link
-                to="/userauth"
+                to="/Userlogin"
                 className="btn btn-outline-dark rounded-pill mx-2"
                 title="login"
               >
-                <i className="bi-person"></i>
+                <i class="bi bi-person-lock"></i>
               </Link>
             </div>
           </div>
@@ -99,40 +102,47 @@ function App() {
       <Routes>
         <Route path="/" element={<SpecialSale />} />
         <Route path="/about-us" element={<About />} />
-        <Route path="/userauth" element={<AuthUser />} />
-        <Route path="/register/user" element={<Registeruser />} />
+        <Route path="/Userlogin" element={<AuthUser />} />
+        <Route path="/newuser" element={<Registeruser />} />
         <Route path="/forgot-user" element={<Forgotpassword />} />
         <Route path="/mycart" element={<Shopcart />} />
         <Route path="/allproducts" element={<AllProducts />} />
         <Route path="/popular" element={<Popularitems />} />
         <Route path="/newitems" element={<NewItems />} />
         <Route path="*" element={<NoMatch />} />
-
       </Routes>
       <footer className="footer mt-0 py-3">
         <ul className="nav justify-content-center border-bottom pb-3 mb-3">
           <li className="nav-item">
             <Link to="/" className="nav-link px-2 text-muted">
-              Home
+              <i class="bi bi-house"></i> Home
             </Link>
           </li>
           <li className="nav-item">
-            <a href="/all-products" className="nav-link px-2 text-muted">
-              products
+            <a href="/allproducts" className="nav-link px-2 text-muted">
+              <i class="bi bi-cart4"></i> products
             </a>
           </li>
           <li className="nav-item">
-            <Link to="/userauth" className="nav-link px-2 text-muted">
-              login
+            <Link to="/Userlogin" className="nav-link px-2 text-muted">
+              <i class="bi bi-file-lock"></i> login
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/Userlogin" className="nav-link px-2 text-muted">
+              <i class="bi bi-person-fill-exclamation"></i> staff
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/about-us" className="nav-link px-2 text-muted">
-              About
+              <i class="bi bi-link-45deg"></i> About
             </Link>
           </li>
         </ul>
-        <p className="text-center text-muted">© 2021 Company, Inc</p>
+        <p className="text-center text-muted">
+          Copyright © {new Date().getFullYear() - 1}-{new Date().getFullYear()}{" "}
+          Company, Inc
+        </p>
       </footer>
     </>
   );
