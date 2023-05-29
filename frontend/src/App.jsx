@@ -9,6 +9,7 @@ import { NoMatch } from "./Components/no-match";
 import { Registeruser } from "./Components/Register";
 import { AllProducts, Popularitems, NewItems } from "./Components/allproducts";
 import { Forgotpassword } from "./Components/forgot";
+import {Singleproduct} from "./Components/product_detail";
 
 function App() {
   return (
@@ -107,6 +108,7 @@ function App() {
         <Route path="/forgot-user" element={<Forgotpassword />} />
         <Route path="/mycart" element={<Shopcart />} />
         <Route path="/allproducts" element={<AllProducts />} />
+        <Route path="/product/:id" element={<Singleproduct />} />
         <Route path="/popular" element={<Popularitems />} />
         <Route path="/newitems" element={<NewItems />} />
         <Route path="*" element={<NoMatch />} />

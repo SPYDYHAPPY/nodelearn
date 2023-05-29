@@ -90,9 +90,10 @@ export const AllProducts = () => {
 
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                       <div class="text-center">
+
                         <Link
                           class="btn btn-outline-dark mt-auto rounded-pill"
-                          to="#"
+                          to={product.id}
                         >
                           view
                         </Link>
@@ -103,10 +104,12 @@ export const AllProducts = () => {
                         >
                           Add to cart
                         </Link>
+
                       </div>
                     </div>
                   </div>
                 </div>
+
               );
             })}
 
