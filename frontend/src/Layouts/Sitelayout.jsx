@@ -1,13 +1,20 @@
 import React from "react";
+import BrandLogo from "../assets/nav-logo.png";
 import { Link } from "react-router-dom";
 
-function Sitetopnav() {
+export const Sitetopnav = () => {
   return (
     <>
       <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
         <div className="container px-4 px-lg-10">
           <Link className="navbar-brand position-relative" to="/">
-            {/* <img src="/nav-logo.png" height="100" width="100" alt="logo" className="position-absolute top-50 start-0 translate-middle" /> */}0
+            <img
+              src={BrandLogo}
+              height="100"
+              width="100"
+              alt="logo"
+              className="position-absolute top-50 start-0 translate-middle"
+            />
           </Link>
 
           <button
@@ -41,22 +48,22 @@ function Sitetopnav() {
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="/all-products">
+                    <Link className="dropdown-item" to="/allproducts">
                       All Products
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#!">
+                    <Link className="dropdown-item" to="/popular">
                       Popular Items
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/newarrival">
+                    <Link className="dropdown-item" to="/newitems">
                       New Arrivals
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -67,60 +74,63 @@ function Sitetopnav() {
               </li>
             </ul>
             <div className="d-flex justify-content-center">
-              <a
-                className="btn btn-outline-dark rounded-pill"
-                href="/cart"
-                title="Cart"
-              >
+              <Link className="btn btn-outline-dark rounded-pill" to="/mycart">
                 <i className="bi-cart-fill me-1"></i>Cart
                 <span className="badge bg-dark text-white ms-1 rounded-pill">
                   0
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
+                to="/Userlogin"
                 className="btn btn-outline-dark rounded-pill mx-2"
-                href="/user-login"
                 title="login"
               >
-                <i className="bi-person"></i>
-              </a>
+                <i class="bi bi-person-lock"></i>
+              </Link>
             </div>
           </div>
         </div>
       </nav>
     </>
   );
-}
+};
 
-function Sitefooter() {
+export const Sitefooter = () => {
   return (
     <>
-      <footer className="footer mt-0 py-3 bg-light">
+      <footer className="footer mt-0 py-3">
         <ul className="nav justify-content-center border-bottom pb-3 mb-3">
           <li className="nav-item">
             <Link to="/" className="nav-link px-2 text-muted">
-              Home
+              <i class="bi bi-house"></i> Home
             </Link>
           </li>
           <li className="nav-item">
-            <a href="/all-products" className="nav-link px-2 text-muted">
-              products
+            <a href="/allproducts" className="nav-link px-2 text-muted">
+              <i class="bi bi-cart4"></i> products
             </a>
           </li>
           <li className="nav-item">
-            <a href="/user-login" className="nav-link px-2 text-muted">
-              login
-            </a>
+            <Link to="/Userlogin" className="nav-link px-2 text-muted">
+              <i class="bi bi-file-lock"></i> login
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/Userlogin" className="nav-link px-2 text-muted">
+              <i class="bi bi-person-fill-exclamation"></i> staff
+            </Link>
           </li>
           <li className="nav-item">
             <Link to="/about-us" className="nav-link px-2 text-muted">
-              About
+              <i class="bi bi-link-45deg"></i> About
             </Link>
           </li>
         </ul>
-        <p className="text-center text-muted">© 2021 Company, Inc</p>
+        <p className="text-center text-muted">
+          Copyright © {new Date().getFullYear() - 1}-{new Date().getFullYear()}{" "}
+          Company, Inc
+        </p>
       </footer>
     </>
   );
-}
-export default { Sitetopnav, Sitefooter };
+};

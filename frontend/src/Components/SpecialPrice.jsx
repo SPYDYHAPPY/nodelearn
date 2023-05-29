@@ -56,7 +56,7 @@ const SpecialSale = () => {
               <span id="notification"></span>
               <button
                 id="quantity"
-                className="btn btn-outline-dark flex-shrink-0 rounded-pill"
+                className="btn btn-sm btn-outline-dark flex-shrink-0 rounded-pill"
                 type="submit"
               >
                 <i className="bi-cart-fill me-1"></i>

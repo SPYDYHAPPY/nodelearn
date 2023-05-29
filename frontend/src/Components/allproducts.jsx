@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export const AllProducts = () => {
   const [products, setProducts] = useState([]);
 
+  const { id } = useParams();
+
   useEffect(() => {
     getProducts();
   }, []);
-
-  const fetchProducts = products.length;
 
   const getProducts = async () => {
     try {
@@ -47,71 +47,64 @@ export const AllProducts = () => {
 
           <div className="row gx-4 gx-lg-3 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center p-2">
             {/* CARD-1 */}
-            {products.map((product) => {
-              return (
-                <div class="col-sm-4 mb-3">
-                  <div class="card h-100 shadow">
-                    <div className="row gx-1">
-                      <div className="col">
-                        <span class="badge rounded-pill bg-primary text-white position-absolute m-2">
-                          {product.category}
-                        </span>
-                      </div>
-                      <div className="col">
-                        <span class="badge rounded-pill bg-warning text-dark position-absolute m-2">
-                          {product.type}
-                        </span>
-                      </div>
+            {products.map((product) => (
+              <div class="col-sm-4 mb-3">
+                <div class="card h-100 shadow">
+                  <div className="row gx-1">
+                    <div className="col">
+                      <span class="badge rounded-pill bg-primary text-white position-absolute m-2">
+                        {product.category}
+                      </span>
                     </div>
+                    <div className="col">
+                      <span class="badge rounded-pill bg-warning text-dark position-absolute m-2">
+                        {product.type}
+                      </span>
+                    </div>
+                  </div>
 
-                    <img
-                      class="card-img-top"
-                      src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                      alt="..."
-                    />
+                  <img
+                    class="card-img-top"
+                    src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                    alt="..."
+                  />
 
-                    <div class="card-body p-4">
-                      <div class="text-center">
-                        <h5 class="fw-bolder">{product.title}</h5>
-                        <div class="d-flex justify-content-center small text-warning mb-2">
-                          <div class="card-text me-2 text-primary">
-                            Rating: {product.rating}
-                          </div>
+                  <div class="card-body p-4">
+                    <div class="text-center">
+                      <h5 class="fw-bolder">{product.title}</h5>
+                      <div class="d-flex justify-content-center small text-warning mb-2">
+                        <div class="card-text me-2 text-primary">
+                          Rating: {product.rating}
                         </div>
-                        <span class="text-muted text-decoration-line-through">
-                          ₹{product.price}
-                        </span>
-                        ₹1299
                       </div>
-                      <div class="card-text text-left">
-                        {product.description}
-                      </div>
+                      <span class="text-muted text-decoration-line-through">
+                        ₹{product.price}
+                      </span>
+                      ₹1299
                     </div>
+                    <div class="card-text text-left">{product.description}</div>
+                  </div>
 
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                      <div class="text-center">
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center">
+                      <Link
+                        class="btn btn-sm btn-outline-dark mt-auto rounded-pill"
+                        to={`/store/${product.id}`}
+                      >
+                        view
+                      </Link>
 
-                        <Link
-                          class="btn btn-outline-dark mt-auto rounded-pill"
-                          to={product.id}
-                        >
-                          view
-                        </Link>
-
-                        <Link
-                          class="btn btn-outline-dark mt-auto rounded-pill mx-1"
-                          to="#"
-                        >
-                          Add to cart
-                        </Link>
-
-                      </div>
+                      <Link
+                        class="btn btn-sm btn-outline-dark mt-auto rounded-pill mx-1"
+                        to="#"
+                      >
+                        Add to cart
+                      </Link>
                     </div>
                   </div>
                 </div>
-
-              );
-            })}
+              </div>
+            ))}
 
             {/** <div className="col-sm-4 mb-3">
                     <div className="card h-100 shadow">
@@ -414,14 +407,14 @@ export const Popularitems = () => {
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
                       <Link
-                        class="btn btn-outline-dark mt-auto rounded-pill"
-                        to="#"
+                        class="btn btn-sm btn-outline-dark mt-auto rounded-pill"
+                        to={`/store/${product.id}`}
                       >
                         view
                       </Link>
 
                       <Link
-                        class="btn btn-outline-dark mt-auto rounded-pill mx-1"
+                        class="btn btn-sm btn-outline-dark mt-auto rounded-pill mx-1"
                         to="#"
                       >
                         Add to cart
@@ -745,14 +738,14 @@ export const NewItems = () => {
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
                       <Link
-                        class="btn btn-outline-dark mt-auto rounded-pill"
-                        to="#"
+                        class="btn btn-sm btn-outline-dark mt-auto rounded-pill"
+                        to={`/store/${newproduct.id}`}
                       >
                         view
                       </Link>
 
                       <Link
-                        class="btn btn-outline-dark mt-auto rounded-pill mx-1"
+                        class="btn btn-sm btn-outline-dark mt-auto rounded-pill mx-1"
                         to="#"
                       >
                         Add to cart

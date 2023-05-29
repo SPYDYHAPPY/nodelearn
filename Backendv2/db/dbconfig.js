@@ -1,11 +1,11 @@
 import { Sequelize } from "sequelize";
 
 
-const myDb = new Sequelize('storeapp', 'root', '2129',{
+const myDb = new Sequelize('storeapp', 'root', 'deba',{
     dialect: 'mysql',
     dialectOptions: {
         host: 'localhost',
-        port: 3306
+        port: 3308
     }
 })
 
