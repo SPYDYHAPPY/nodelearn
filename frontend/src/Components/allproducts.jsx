@@ -23,7 +23,7 @@ export const AllProducts = () => {
   return (
     <>
       <section className="py-2 bg-light">
-        <div className="container px-4 px-lg-5 mt-5">
+        <div className="container px-4 px-lg-5 mt-5 bg-info">
           <div className="row gx-4 gx-lg-5">
             <div className="col-9">
               <h2 className="fw-bolder mb-4">ALL PRODUCTS</h2>
@@ -105,6 +105,8 @@ export const AllProducts = () => {
                 </div>
               </div>
             ))}
+
+
 
             {/** <div className="col-sm-4 mb-3">
                     <div className="card h-100 shadow">
@@ -317,6 +319,15 @@ export const AllProducts = () => {
           </div>
         </div>
       </section>
+       
+      <div className="container">
+        <Link
+          className="btn btn-sm btn-outline-dark mt-auto rounded-pill sticky-sm-top ms-5 my-0 position-absolute fixed-top"
+          to="#"
+        >
+          Add to cart
+        </Link>
+        </div>
     </>
   );
 };
